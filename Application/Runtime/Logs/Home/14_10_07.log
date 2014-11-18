@@ -1,0 +1,131 @@
+[ 2014-10-07T14:21:00+08:00 ] 127.0.0.1 /index.php/Home/Talkpage/3.html
+USER: DEBUG:Array
+(
+    [uid] => 1
+    [tid] => 3
+    [content] => 你好啊
+)
+
+
+[ 2014-10-07T17:18:25+08:00 ] 127.0.0.1 /index.php/Home/Team/3.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001148s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_team_duty_details` [ RunTime:0.333449s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000702s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000780s ]
+
+[ 2014-10-07T17:21:15+08:00 ] 127.0.0.1 /index.php/Home/Team/3.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001251s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001632s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_team_duty_details` [ RunTime:0.010333s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000596s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000652s ]
+
+[ 2014-10-07T17:21:54+08:00 ] 127.0.0.1 /index.php/Home/Team/3.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000410s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000800s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_team_duty_details` [ RunTime:0.010473s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.024068s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='' ) LIMIT 1   [ RunTime:0.025612s ]
+DEBUG: Array
+(
+    [uid] => 1
+    [name] => UI
+    [content] => 
+    [duty_id] => 1
+    [touid] => 
+    [deadline] => 
+)
+
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000734s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000817s ]
+
+[ 2014-10-07T17:31:11+08:00 ] 127.0.0.1 /index.php/Home/Team/3.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000624s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001016s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_team_duty_details` [ RunTime:0.010267s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.034833s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='' ) LIMIT 1   [ RunTime:0.000341s ]
+DEBUG: Array
+(
+    [uid] => 1
+    [name] => ui
+    [content] => ui
+    [duty_id] => 1
+    [touid] => 
+    [deadline] => 
+)
+
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001064s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001153s ]
+
+[ 2014-10-07T17:32:46+08:00 ] 127.0.0.1 /index.php/Home/Team/3.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000533s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000843s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_team_duty_details` [ RunTime:0.009647s ]
+DEBUG: 
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.024666s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='' ) LIMIT 1   [ RunTime:0.000250s ]
+DEBUG: Array
+(
+    [uid] => 1
+    [name] => ui
+    [content] => ui
+    [duty_id] => 1
+    [touid] => 
+    [deadline] => 
+)
+
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000698s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000761s ]
+
+[ 2014-10-07T17:33:38+08:00 ] 127.0.0.1 /index.php/Home/Team/3.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000586s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000916s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_team_duty_details` [ RunTime:0.010770s ]
+DEBUG: 璨
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.025611s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='�\�' ) LIMIT 1   [ RunTime:0.000296s ]
+DEBUG: Array
+(
+    [uid] => 1
+    [name] => ui
+    [content] => ui
+    [duty_id] => 1
+    [touid] => 1
+    [deadline] => 
+)
+
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000721s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000782s ]
+
+[ 2014-10-07T17:36:54+08:00 ] 127.0.0.1 /index.php/Home/Team/3.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000621s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001125s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_team_duty_details` [ RunTime:0.009664s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.026451s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='�\�' ) LIMIT 1   [ RunTime:0.000237s ]
+SQL: INSERT INTO `ahgfrx_project_team_duty_details` (`uid`,`name`,`content`,`duty_id`,`touid`,`deadline`,`pid`) VALUES (1,'ui','ui',1,1,'',3) [ RunTime:0.016582s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000879s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000988s ]
+
+[ 2014-10-07T23:09:15+08:00 ] 127.0.0.1 /lview?c=www&loc=Edu_F_Width1,Edu_F_BT_width,F_Width2,Edu_F_Rectangle,F_ZQ_1,F_ZQ_2,Edu_F_Upright,Edu_F_Width2,Edu_F_MIND_STREAM_RM&callback=crystal.callbackarea&rot=1&ri=l.&chl=edu&k=%E8%8B%B1%E8%AF%AD%E9%AB%98%E8%80%83%E6%94%B9%E9%9D%A9%20%E7%A9%B6%E7%AB%9F%E6%98%AF%E5%87%8F%E8%B4%9F%E8%BF%98%E6%98%AF%E5%8A%A0%E5%8E%8B%EF%BC%9F%2C%E9%AB%98%E8%80%83%E8%B5%84%E8%AE%AF%2C%E9%AB%98%E8%80%83%E6%94%B9%E9%9D%A9&t=%E8%8B%B1%E8%AF%AD%E9%AB%98%E8%80%83%E6%94%B9%E9%9D%A9%20%E7%A9%B6%E7%AB%9F%E6%98%AF%E5%87%8F%E8%B4%9F%E8%BF%98%E6%98%AF%E5%8A%A0%E5%8E%8B%EF%BC%9F_%E6%95%99%E8%82%B2_%E8%85%BE&r=baidu%7C%E8%8B%B1%E8%AF%AD%E6%94%B9%E9%9D%A9&s=
+ERR: 无法加载控制器:Www
+
+[ 2014-10-07T23:09:16+08:00 ] 127.0.0.1 /lview?c=www&loc=F_RM1&callback=crystal.callbackarea&ri=l.&chl=edu&k=%E8%8B%B1%E8%AF%AD%E9%AB%98%E8%80%83%E6%94%B9%E9%9D%A9%20%E7%A9%B6%E7%AB%9F%E6%98%AF%E5%87%8F%E8%B4%9F%E8%BF%98%E6%98%AF%E5%8A%A0%E5%8E%8B%EF%BC%9F%2C%E9%AB%98%E8%80%83%E8%B5%84%E8%AE%AF%2C%E9%AB%98%E8%80%83%E6%94%B9%E9%9D%A9&t=%E8%8B%B1%E8%AF%AD%E9%AB%98%E8%80%83%E6%94%B9%E9%9D%A9%20%E7%A9%B6%E7%AB%9F%E6%98%AF%E5%87%8F%E8%B4%9F%E8%BF%98%E6%98%AF%E5%8A%A0%E5%8E%8B%EF%BC%9F_%E6%95%99%E8%82%B2_%E8%85%BE&r=baidu%7C%E8%8B%B1%E8%AF%AD%E6%94%B9%E9%9D%A9&s=
+ERR: 无法加载控制器:Www
+

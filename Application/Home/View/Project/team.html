@@ -1,0 +1,282 @@
+<extend name="Base/common"/>
+
+<block name="body">
+<title>{$project['name']} - 项目协作</title>
+<div class="container">
+<div class="col-md-3" id="space_height">
+<div class="alert alert-success" role="alert"><h4>提示</h4><p>善用任务分配能提高团队效能。</p></div>
+<!-- Nav tabs -->
+<ul class="nav nav-pills nav-stacked" role="tablist">
+  <li class="active"><a href="#team_talk" role="tab" data-toggle="tab">讨论</a></li>
+  <li><a href="#team_duty" role="tab" data-toggle="tab">任务</a></li>
+</ul>
+
+</div><!--col-md-3-->
+<div class="col-md-9">
+<div class="page-header">
+  <h1>{$project['name']} <small>项目协作</small></h1>
+</div>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane fade in active" id="team_talk">
+
+<!-- Modal -->
+<div class="modal fade" id="team_create_talk" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">取消</span></button>
+        <h4 class="modal-title" id="myModalLabel">创建一个新讨论</h4>
+      </div>
+      <div class="modal-body">
+      <form method="post" action="__SELF__">
+      	<input type="hidden" name="type" value="create_talk">
+        <input class="form-control" style="width:300px;" type="text" name="talk_title" class="form-control" placeholder="讨论主题" required>
+        <br />
+        <textarea id="content" class="form-control" rows="3" name="talk_content" placeholder="请填写关于这个讨论的内容" required></textarea>
+        <br />
+  		<select multiple class="form-control" name="talk_class">
+      <volist name="talk_class" id="vo">
+        <option value="{$vo['id']}">{$vo['name']}</option>
+      </volist>
+      </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="submit" class="btn btn-primary">提交</button>
+      </div>
+     </form>
+    </div>
+  </div>
+</div>
+
+
+  	<h4>讨论 <button class="btn btn-success" data-toggle="modal" data-target="#team_create_talk">发起新的讨论</button></h4>
+  	<hr>
+
+  <volist name="talk_content" id="vo">
+   <h4><a href="{:U('/Home/Talkpage/'.$vo['tid'])}" target="_BLANK">{:getTalktitle($vo['tid'])}</a><span style="float:right"><span class="glyphicon glyphicon-user"></span> {:getUsername($vo['uid'])}</span></h4>
+   <small><div style="float:right">{$vo['time']}</div></small>
+   <hr>
+   </volist>
+
+  </div><!--team_talk-->
+  <div class="tab-pane fade" id="team_duty">
+  	
+<!-- Modal -->
+<div class="modal fade" id="team_create_duty" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">取消</span></button>
+        <h4 class="modal-title" id="myModalLabel">创建新的任务清单</h4>
+      </div>
+      <div class="modal-body">
+      <form method="post" action="__SELF__">
+      	<input type="hidden" name="type" value="create_duty">
+        <input class="form-control" style="width:300px;" type="text" name="duty_name" class="form-control" placeholder="清单名称" required>
+        <br />
+        <textarea id="content" class="form-control" rows="3" name="duty_content" placeholder="请填写关于这个清单的介绍" required></textarea>
+        <br />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="submit" class="btn btn-primary">提交</button>
+      </div>
+     </form>
+    </div>
+  </div>
+</div>
+
+
+  	<h4>任务<if condition="$admin"> <button class="btn btn-success" data-toggle="modal" data-target="#team_create_duty">创建新的任务清单</button></if></h4>
+  	<hr>
+
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#duty_my" role="tab" data-toggle="tab">我的任务</a></li>
+  <li><a href="#duty_all" role="tab" data-toggle="tab">所有清单</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="duty_my">
+<script type="text/javascript">
+function set_active(details_id,active){
+  $.ajax({
+            type:"POST",
+            url:"__SELF__",
+            data:{
+                	details_id:details_id,
+                	active:active,
+                  	type:"set_active"
+                  },
+            success:function(re){
+                if(re=='success'){
+                		if(active==0) var span_con = '[未进行]';
+						if(active==1) var span_con = '[进行中]';
+						if(active==2) var span_con = '[已完成]';
+						document.getElementById('span_myduty_'+details_id).innerHTML=span_con;
+                }else{
+                	alert('修改失败');
+                }
+            }
+  });
+}
+</script>
+<br />
+<div class="panel-group" id="myduty" role="tablist" aria-multiselectable="true">
+<volist name="team_dutylist_my" id="myvo" empty="$myduty_empty">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#myduty" href="#mylist_{$i}" aria-expanded="true" aria-controls="mylist_{$i}"><php>trace($myvo['active']);</php>
+        <span id="span_myduty_{$myvo['id']}">
+          <if condition="$myvo['active'] eq 0">[未进行]
+          <elseif condition="$myvo['active'] eq 1" />[进行中]
+          <elseif condition="$myvo['active'] eq 2" />[已完成]
+          </if></span>{$myvo['name']} - {:getDutyname($myvo['duty_id'])}
+        </a>
+      </h4>
+    </div>
+    <div id="mylist_{$i}" class="panel-collapse collapse" role="tabpanel">
+      <div class="panel-body">
+        <b>任务内容：</b>{$myvo['content']}<br />
+        <b>任务指派人：</b>{:getUsername($myvo['uid'])}<br />
+        <b>指派时间：</b>{$myvo['time']}<br />
+        <b>完成日期：</b>{$myvo['deadline']=='0000-00-00'?'无要求':$myvo['deadline']}<br />
+        <hr>
+        <div class="text-right">
+        	<button class="btn btn-danger" onclick="set_active({$myvo['id']},0)"><span class="glyphicon glyphicon-stop"></span></button>
+        	<button class="btn btn-info" onclick="set_active({$myvo['id']},1)"><span class="glyphicon glyphicon-play"></span></button>
+        	<button class="btn btn-success" onclick="set_active({$myvo['id']},2)"><span class="glyphicon glyphicon-ok"></span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+ </volist>
+</div>
+
+  </div>
+  <div class="tab-pane" id="duty_all">
+<if condition="$admin">
+<script type="text/javascript">
+function duty_submit(){
+  $.ajax({
+            type:"POST",
+            url:"__SELF__",
+            data:{
+          			duty_name:$("#duty_details_name").val(),
+                	duty_content:$("#duty_details_content").val(),
+                	duty_id:$("#duty_details_dutyid").val(),
+                	duty_touname:$("#duty_details_touname").val(),
+                	duty_deadline:$("#duty_details_deadline").val(),
+                  	type:"create_duty_details"
+                  },
+            success:function(re){
+                alert(re);
+                if(re=="指派成功"){
+                  location.replace(location);
+                }
+            }
+  });
+}
+</script>
+
+      <!-- Modal -->
+<div class="modal fade" id="team_duty_details" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">取消</span></button>
+        <h4 class="modal-title" id="myModalLabel">为成员指派任务</h4>
+      </div>
+      <div class="modal-body">
+      	<input type="hidden" name="type" value="create_duty_details">
+        <input class="form-control" style="width:300px;" type="text" name="duty_name" id="duty_details_name" class="form-control" placeholder="任务名称" required>
+        <br />
+        <textarea class="form-control" rows="3" name="duty_content" id="duty_details_content" placeholder="请填写关于这个任务的内容" required></textarea>
+        <br />
+        <input class="form-control" style="width:300px;" type="text" name="duty_tousername" id="duty_details_touname" class="form-control" placeholder="指派给的成员用户名" required>
+        <br />
+        <input class="form-control" style="width:300px;" type="text" name="duty_deadline" id="duty_details_deadline" class="form-control" placeholder="完成日期（选填）">
+        <input type="hidden" id="duty_details_dutyid">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" onclick="duty_submit()">提交</button>
+      </div>
+    </div>
+  </div>
+</div>
+</if>
+
+<br />
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+<volist name="team_dutylist" id="vo">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse{$i}" aria-expanded="true" aria-controls="collapse{$i}">
+          {$vo['name']}
+        </a>
+      </h4>
+    </div>
+    <div id="collapse{$i}" class="panel-collapse collapse" role="tabpanel">
+      <div class="panel-body">
+      <b>介绍：</b>{:nl2br($vo['content'])}<br />
+	  <b>清单创建人：</b>{:getUsername($vo['uid'])}
+      <if condition="$admin"><br /><button class="btn btn-success" data-toggle="modal" value="{$vo['id']}" data-target="#team_duty_details" onclick="$('#duty_details_dutyid').val($(this).val())">指派任务</button></if>
+      <hr>
+      <PHP>
+      	$team_dutylist_con = M('ProjectTeamDutyDetails')->where('duty_id=%d',$vo['id'])->order('id desc')->select();
+      </PHP>
+
+<div class="panel-group" id="con_list" role="tablist" aria-multiselectable="true">
+<volist name="team_dutylist_con" id="con" key="con_i">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#con_list" href="#con_{$i}_{$con_i}" aria-expanded="true" aria-controls="con_{$con_i}">
+          <if condition="$con['active'] eq 0">[未进行]
+          <elseif condition="$con['active'] eq 1" />[进行中]
+          <else />[已完成]
+          </if>
+          {$con['name']}
+        </a>
+      </h4>
+    </div>
+    <div id="con_{$i}_{$con_i}" class="panel-collapse collapse" role="tabpanel">
+      <div class="panel-body">
+        <b>任务内容：</b>{$con['content']}<br />
+        <b>任务指派人：</b>{:getUsername($con['uid'])}<br />
+        <b>被指派人：</b>{:getUsername($con['touid'])}<br />
+        <b>指派时间：</b>{$con['time']}<br />
+        <b>完成日期：</b>{$con['deadline']=='0000-00-00'?'无要求':$con['deadline']}<br />
+      </div>
+    </div>
+    </div>
+	</volist>
+</div>
+
+       <!--body-->
+      </div>
+    </div>
+  </div><!--panel end-->
+</volist>
+</div>
+
+  </div><!--duty_all-->
+</div><!--tab-content-->
+
+
+  </div><!--team_duty-->
+</div>
+
+
+</div><!--col-md-9-->
+</div><!--container-->
+
+</block>

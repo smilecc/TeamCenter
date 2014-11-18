@@ -1,0 +1,85 @@
+<extend name="Base/common"/>
+<block name="body">
+<title>收件箱 - 社团中心</title>
+
+<script type="text/javascript">
+function postmsg(){
+    $.ajax({
+            type:"POST",
+            url:"__SELF__",
+            data:{
+                  type:'send',
+                  toname:$("#toname").val(),
+                  content:$("#comenttext").val()
+                  },
+            cache:false, //不缓存此页面   
+            success:function(re){
+        alert(re);
+        location.replace(location);
+            }
+        });
+
+
+  }
+</script>
+
+<div class="modal fade" id="wmsg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">发送私信</h4>
+      </div>
+      <div class="modal-body">
+      <input type="text" class="form-control" id="toname" placeholder="请输入要私信的用户名 只能输一个哦( • ̀ω•́ )✧..."><hr>
+<textarea name="content" onKeyDown='if (this.value.length>=500){if(event.keyCode != 8)event.returnValue=false;}' class="form-control" rows="5" id="comenttext"></textarea>
+<hr>
+<div class="alert alert-info">长度限500字</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" onclick="postmsg()" data-dismiss="modal">提交</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="container">
+
+<div class="col-md-8">
+<div class="page-header">
+  <h3>我的私信 <small><button class="btn btn-success" data-toggle="modal" data-target="#wmsg">写私信</button></small></h3>
+</div>
+<volist name="inbox_index" id="vo">
+  <p><if condition="($vo['from'] eq 1)">
+
+  <if condition="($vo['uid1'] eq cookie('user_id'))">
+  我发送给<a href="/Home/User/people/{$vo.uid2}">{:getUsername($vo['uid2'])}</a>
+  <else />
+  <a href="/Home/User/people/{$vo.uid1}">{:getUsername($vo['uid1'])}</a>
+  </if>
+
+  <else />
+
+  <if condition="($vo['uid1'] eq cookie('user_id'))">
+  <a href="/Home/User/people/{$vo.uid2}">{:getUsername($vo['uid2'])}</a>
+  <else />
+  我发送给<a href="/Home/User/people/{$vo.uid1}">{:getUsername($vo['uid1'])}</a>
+  </if>
+  
+  </if>
+  ：{:getInboxcontent($vo['inbox_id'])}...</p>
+  <p><span>{$vo['time']}</span><span style="float:right"><a href="/Home/Inboxpage/{$vo['uid1'] == cookie('user_id')?$vo['uid2']:$vo['uid1']}" target="_BLANK">共{$vo['numb']}条对话</a></span></p>
+  <hr>
+</volist>
+
+
+</div><!--col-md-8-->
+
+<div class="col-md-4" id="space_height">
+
+</div>
+
+</div><!--container-->
+
+</block>

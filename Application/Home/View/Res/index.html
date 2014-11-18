@@ -1,0 +1,87 @@
+<extend name="Base/common"/>
+<block name="body">
+<title>资源共享 - 社团中心</title>
+<div class="container">
+<div class="row">
+	<div class="col-md-9">
+  <volist name="res_content" id="vo">
+   <h4><a href="{:U('/Home/Respage/'.$vo['id'])}" target="_BLANK">{$vo['name']}</a><span style="float:right"><span class="glyphicon glyphicon-user"></span> {:getUsername($vo['uid'])}</span></h4>
+   <small>{:mb_substr($vo['content'],0,100,"utf8")}...<span style="float:right"><span class="glyphicon glyphicon-book"></span> {:getResclassname($vo['class'])}</span></small>
+   <hr>
+   </volist>
+
+<ul class="pager">
+  <li class="previous {$res_page_numb-30<0?'disabled':''}"><a href="{:U('/Home/Res.html/'.$res_mode.'/'.($res_page_numb-30))}">&larr; 上一页</a></li>
+  <li class="next"><a href="{:U('/Home/Res.html/'.$res_mode.'/'.($res_page_numb+30))}">下一页 &rarr;</a></li>
+</ul>
+
+  </div><!--col-md-9-->
+	<div class="col-md-3" id="space_height">
+	<div class="alert alert-success" role="alert">
+		<h4>提示</h4>
+		<p>本站不提供资源上传服务，旨在让大家分享各路资源。</p>
+	</div><!--提示框-->
+
+<!--资料列表-->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">资源类目</h3>
+  </div>
+  <div class="panel-body">
+<ul class="nav nav-pills nav-stacked" role="tablist">
+  <li role="presentation" id="res_0"><a href="{:U('/Home/Res.html/0/')}">所有</a></li>
+  <volist name="res_class" id="vo">
+  <li role="presentation" id="res_{$vo['id']}"><a href="{:U('/Home/Res.html/'.$vo['id'])}">{$vo['name']}</a></li>
+  </volist>
+</ul>
+<hr>
+
+<!-- Modal -->
+<div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">取消</span></button>
+        <h4 class="modal-title" id="myModalLabel">分享新资源</h4>
+      </div>
+      <div class="modal-body">
+      <form method="post" action="__SELF__">
+      	<input type="hidden" name="type" value="create">
+        <input class="form-control" style="width:300px;" type="text" name="res_name" class="form-control" placeholder="资源名称" required>
+        <br />
+        <input class="form-control" style="width:300px;" type="text" name="res_url" class="form-control" placeholder="资源地址/URL" required>        <br />
+          <div class="alert alert-success" role="alert">
+            <p>本站不提供资源上传服务，旨在让大家分享各路资源，如需上传文件，推荐使用<a href="http://pan.baidu.com" target="_BLANK">百度网盘</a>上传后分享链接到此。</p>
+          </div><!--提示框-->
+        <textarea id="content" class="form-control" rows="3" name="res_content" placeholder="请填写一些关于这个资源的介绍（可选）"></textarea>
+        <br />
+  		<select multiple class="form-control" name="res_class">
+      <volist name="res_class" id="vo">
+        <option value="{$vo['id']}">{$vo['name']}</option>
+      </volist>
+      </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="submit" class="btn btn-primary">提交</button>
+      </div>
+     </form>
+    </div>
+  </div>
+</div>
+
+<center><button class="btn btn-primary" data-toggle="modal" data-target="#create">分享新资源</button></center>
+
+  </div>
+</div>
+<!--/资料列表-->
+
+	</div><!--col-md-3-->
+</div><!--row-->
+</div><!--container-->
+
+<script type="text/javascript">
+  document.getElementById("res").className="active";
+  document.getElementById("res_{$res_mode}").className="active";
+</script>
+</block>

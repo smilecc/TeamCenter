@@ -1,0 +1,33 @@
+<extend name="Base/common"/>
+<block name="body">
+	<title>{$respage_content['name']} - 资源共享</title>
+
+<div class="container">
+<div class="row">
+
+<label class="col-sm-2 control-label">资源ID：</label>
+<p>{$respage_content['id']}</p>
+<hr>
+<label class="col-sm-2 control-label">资源名称：</label>
+<p>{$respage_content['name']}</p>
+<hr>
+<label class="col-sm-2 control-label">资源发布人：</label>
+<p><a href="/Home/User/people/{$respage_content['uid']}" target="_BLANK">{:getUsername($respage_content['uid'])}</a></p>
+<hr>
+<label class="col-sm-2 control-label">资源介绍：</label>
+<p>{$respage_content['content']?nl2br($respage_content['content']):'无'}</p>
+<hr>
+<label class="col-sm-2 control-label">资源所属类：</label>
+<p>{$respage_class['name']}</p>
+<hr>
+<label class="col-sm-2 control-label">资源地址/URL：</label>
+<p><a href="{$respage_content['url']}" target="_BLANK">{$respage_content['url']}</a></p>
+<hr>
+<label class="col-sm-2 control-label">发布时间：</label>
+<p>{$respage_content['time']}</p>
+
+</div><!--row-->
+</div><!--container-->
+
+
+</block>

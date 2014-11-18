@@ -1,0 +1,111 @@
+<extend name="Base/common"/>
+
+<block name="body">
+<title>公告 - 社团中心</title>
+<div class="container"><!--container-->
+<div class="row"><!--row-->
+
+<div class="col-md-8"><!--col-md-8-->
+
+<volist name="inform_list" id="value"><!--公告内容-->
+<div class="panel panel-default">
+  <div class="panel-body"><p>{:nl2br($value['content'])}</p></div>
+  <div class="panel-footer">
+  <div class="text-right"><a href="/Home/User/people/{$value.uid}" target="_blank">{:getUsername($value['uid'])}</a> 于 {$value.time} 发布于 <b>
+  <IF condition="$value['class_id'] eq 1">社团公告
+  <elseif condition="$value['class_id'] eq 2" />项目公告：<a href="/Home/Project/{$value['project_id']}" target="_BLANK">{:getProjectname($value['project_id'])}</a>
+  </IF>
+  </b>
+
+  </div>
+  </div>
+</div>
+</volist>
+<!--/公告内容-->
+
+<if condition="($inform_count gt ($inform_page_numb+30)) OR ($inform_count gt 30)">
+<ul class="pager">
+  <li class="previous {$inform_page_numb-30<0?'disabled':''}"><a href="{:U('/Home/Inform/'.$page_active.'/'.($inform_page_numb-30))}">&larr; 上一页</a></li>
+  <li class="next {$inform_page_numb+30>=$inform_count?'disabled':''}"><a href="{:U('/Home/Inform/'.$page_active.'/'.($inform_page_numb+30))}">下一页 &rarr;</a></li>
+</ul>
+</if>
+
+</div><!--/col-md-8-->
+
+<div class="col-md-4" id="space_height"><!--col-md-4-->
+
+<div class="panel panel-default"><!--发布公告-->
+  <div class="panel-heading">
+    <h3 class="panel-title">发布公告</h3>
+  </div>
+  <div class="panel-body">
+    <textarea id="content" class="form-control" rows="3" name="content"></textarea>
+    <p>请输入少于240字的公告</p>
+    <hr>
+    <div class="text-right">
+    <!-- 发布按钮 -->
+<script type="text/javascript">
+function inform_submit(class_id,project_id){
+  $.ajax({
+            type:"POST",
+            url:"__SELF__",
+            data:{
+                  content:$("#content").val(),
+                  class_id:class_id,
+                  project_id:project_id,
+                  type:"content"
+                  },
+            success:function(re){
+                alert(re);
+                if(re=="发布成功"){
+                  location.replace(location);
+                }
+            }
+  });
+}
+</script>
+<div class="btn-group">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    请选择所发布的类 <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+  <if condition="$is_system_admin"><li><a href="#" onclick="inform_submit(1)">社团公告</a></li></if>
+    <li class="divider"></li>
+    <volist name="creater" id="vo">
+    <li><a href="#" onclick="inform_submit(2,{$vo.id})">{$vo.name}</a></li>
+    </volist>
+    <volist name="member_admin" id="vol">
+    <li><a href="#" onclick="inform_submit(2,{$vol.pid})">{:getProjectname($vol["pid"])}</a></li>
+    </volist>
+  </ul>
+</div>
+	<!-- /发布按钮 -->
+    </div>
+  </div>
+</div><!--/发布公告-->
+
+
+<!--分类-->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">公告列表</h3>
+  </div>
+  <div class="panel-body">
+<ul class="nav nav-pills nav-stacked" role="tablist">
+  <li role="presentation" id="page_all"><a href="{:U('/Home/Inform/all/')}">全部</a></li>
+  <li role="presentation" id="page_team"><a href="{:U('/Home/Inform/team/')}">社团公告</a></li>
+  <li role="presentation" id="page_project"><a href="{:U('/Home/Inform/project/')}">项目公告</a></li>
+</ul>
+  </div>
+</div>
+<!--/分类-->
+
+</div><!--/col-md-4-->
+
+</div><!--/row-->
+</div><!--/container-->
+<script type="text/javascript">
+  document.getElementById("inform").className="active";
+  document.getElementById("page_{$page_active}").className="active";
+</script>
+</block>

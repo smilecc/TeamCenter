@@ -1,0 +1,35 @@
+<extend name="Base/common"/>
+
+<block name="body">
+<title>组成成员 - 社团中心</title>
+<div class="container">
+<div class="col-md-8">
+	
+<table class="table table-hover">
+      <thead>
+        <tr>
+          <th>UID</th>
+          <th>姓名</th>
+          <th>身份</th>
+          <th>加入时间</th>
+        </tr>
+      </thead>
+      <tbody>
+      <volist name="member" id="vo">
+        <tr>
+          <td>{$vo['uid']}</td>
+          <td><a href="{:u('/Home/User/people/'.$vo['uid'])}">{$vo['username']}</a></td>
+          <td>{$vo['admin']?'管理员':'会员'}</td>
+          <td>{$vo['register_time']}</td>
+        </tr>
+      </tbody>
+      </volist>
+    </table>
+
+</div>
+<div class="col-md-4" id="space_height"></div>
+</div><!--container-->
+<script type="text/javascript">
+  document.getElementById("member").className="active";
+</script>
+</block>

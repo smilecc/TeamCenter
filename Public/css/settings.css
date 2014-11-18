@@ -1,0 +1,347 @@
+.usercenter{
+    padding-bottom: 30px;
+}
+
+.usercenter .user-left{
+    width: 240px;
+    padding: 0 10px;
+    float: left;
+}
+.usercenter .user-left .userinfo{
+    border-top: 2px #2B85AE solid;
+    background: #FFF;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 15px;
+}
+
+.usercenter .user-left .userinfo h5{
+    font-size: 16px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.usercenter .user-left .userinfo .img-circle{
+    width: 100%;
+}
+
+.usercenter .user-left .userinfo p a{
+    margin: 0 10px;
+}
+
+.usercenter .user-left .userinfo p a em{
+    margin-right: 5px;
+}
+
+.usercenter .user-left .userinfo-mini{
+    background:#428BCA;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.usercenter .user-left .userinfo-mini h3{
+    margin: 0 0 0 10px;
+    line-height: 48px;
+    color: #FFF;
+}
+
+.usercenter .nav{
+    background: #FFF;
+}
+.usercenter .user-left .well{background: #FFF;border: none;height: 122px; width:220px; margin-bottom: 10px; padding: 15px; }
+
+.usercenter .user-left .well h4{
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+.usercenter .user-left .well p{ font-size: 13px;}
+.usercenter .user-left .well .progress{
+    height: 15px;
+}
+
+.usercenter .user-left .opts{
+    width: 220px;
+    margin-bottom: 10px;
+}
+.usercenter .user-left .opts .btn{
+    width: 105px;
+    height: 105px;
+    display: inline-block;
+    float: left;
+}
+.usercenter .user-left .opts .btn:first-child{
+    margin-right: 10px;
+}
+.usercenter .opts .btn em{
+    display: block;
+    width: auto;
+    font-size: 32px;
+    margin: 16px auto;
+}
+
+.usercenter .user-left .users{
+    background: #FFF;
+}
+
+.usercenter .user-left .users h4{
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 24px;
+    margin: 0;
+    padding: 5px 10px;
+    border-bottom: 1px #DDD solid;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.usercenter .user-left .users h4 .more{
+    font-size: 14px;
+    font-weight: normal;
+    float: right;
+    color: #666;
+}
+
+.usercenter .user-left .users p.none{
+    padding: 10px;
+    color:gray;
+    text-align: center;
+}
+
+.usercenter .user-left .users ul{
+    list-style: none;
+    padding: 0 10px 10px 10px;
+    margin-right: -2px;
+}
+
+.usercenter .user-left .users li{
+    float:left;
+    width: 38px;
+    height:38px;
+    margin: 0 2px 2px 0;
+}
+
+.usercenter .user-left .users li a{
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.usercenter .user-left .tips{
+    background: #FFF;
+}
+
+.usercenter .user-left .tips h4{
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 24px;
+    margin: 0;
+    padding: 5px 10px;
+    border-bottom: 1px #DDD solid;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.usercenter .user-left .tips ol,.usercenter .user-left .tips ul{
+    list-style-position: inside;
+    padding: 0 10px 10px;
+    color:#737373;
+}
+
+.usercenter .user-left .tips li{
+    margin-bottom: 5px;
+}
+
+
+.usercenter .user-right{
+    padding: 0 10px 0 10px;
+    margin-left: 245px;
+    background: #FFF;
+    zoom:1;
+    overflow: hidden;
+}
+
+.usercenter .user-right.nobg{
+    background: none;
+    margin-left: 0;
+    padding-left: 5px;
+}
+.usercenter .user-right h3{
+    margin: 20px 0;
+}
+
+.usercenter .user-right .user-right-content{
+    width: 635px;
+    float: left;
+}
+
+.usercenter .user-right .user-right-widget{
+    background: #FFF;
+    float: right;
+}
+
+
+
+.usercenter .update-pic{
+    margin: 20px 0;
+}
+.usercenter .update-pic .upload-area {
+    float: left;
+    position: relative;
+    margin-right: 50px;
+}
+
+.usercenter .update-pic .uploadify {
+    position: relative;
+    border: 2px solid #E1E1E1;
+    background-color: #F5F5F5;
+}
+
+.usercenter .update-pic .swfupload {
+    left: 0;
+}
+.usercenter .update-pic .uploadify-button  {
+    line-height: 120px!important;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    color: #666;
+    text-align: center;
+}
+.usercenter .update-pic .uploadify-queue {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 200px;
+    height: 200px;
+}
+.usercenter .update-pic .uploadify-queue-item {
+    position: relative;
+    margin: 1px;
+    z-index: 9;
+    width: 198px;
+    height: 198px;
+    background-color: #FFF;
+    border: none;
+    padding: 0;
+}
+.usercenter .update-pic .uploadify-queue .fileName,
+.usercenter .update-pic .uploadify-queue .data {
+    display: none;
+}
+.usercenter .update-pic .uploadify-queue .uploadify-progress {
+    float: left;
+    margin-top: 95px;
+    width: 170px;
+    margin-left: 15px;
+}
+.usercenter .update-pic .uploadify-queue .cancel {
+    display: none;
+}
+.usercenter .update-pic .uploadify-queue .uploadify-progress-bar {
+    height: 10px;
+    line-height: 10px;
+    font-size: 0;
+    background-color: #72B939;
+}
+.usercenter .update-pic .photo_uploader_mod {
+    width: 188px;
+    height: 188px;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    border: 1px solid #d7d7d7;
+    float: right;
+}
+
+.usercenter .update-pic .photo_uploader_mod span {
+    position: absolute;
+    z-index: 1000;
+    left: -1px;
+    top: auto;
+    right: auto;
+    bottom: -1px;
+    zoom: 1;
+    display: block;
+    text-align: center;
+    height: 38px;
+    line-height: 38px;
+    width: 179px;
+    color: white !important;
+    background: rgba(0, 0, 0, 0.7);
+}
+.usercenter .update-pic .photo_uploader_mod img {
+    display: block;
+    width: 188px;
+    height: 188px;
+}
+
+.usercenter .update-pic .file-type {
+    position: absolute;
+    top: 90px;
+    left: 2px;
+    padding: 0 15px;
+    width: 200px;
+    line-height: 1.4;
+    font-size: 12px;
+    color: #A8A8A3;
+    text-align: center;
+}
+
+.usercenter .update-pic .file-type em {
+    color: #094;
+}
+
+.usercenter .update-pic .preview {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    z-index: 11;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    background:#fff;
+}
+
+.usercenter .tcrop {
+    font-weight: bold;
+    clear: right;
+    font-size: 14px;
+}
+
+.usercenter .update-pic .crop {
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background: url(../images/mystery.png) no-repeat center center #EEEEEE;
+}
+.usercenter .crop100 {
+    width: 100px;
+    height: 100px;
+}
+.usercenter .crop60 {
+    margin-left: 20px;
+    width: 60px;
+    height: 60px;
+}
+
+.usercenter .bs-icon {
+    float: left;
+    width: 64px;
+    height: 64px;
+    background: url(../images/sync_weibo.png) no-repeat;
+}
+.usercenter .qq {
+    background-position: 0 0;
+}
+.usercenter .sina {
+    background-position: 0 -74px;
+}
+.usercenter .tencent {
+    background-position: 0 -148px;
+}
+.usercenter .t163 {
+    background-position: 0 -222px;
+}
+.usercenter .github {
+    background-position: 0 -296px;
+}
+

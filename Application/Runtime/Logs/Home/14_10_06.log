@@ -1,0 +1,1045 @@
+[ 2014-10-06T00:58:56+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001898s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003194s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.019995s ]
+NOTIC: [2] Missing argument 3 for Home\Model\InboxModel::send(), called in D:\php\ahgfrx\1\Application\Home\Controller\InboxController.class.php on line 8 and defined D:\php\ahgfrx\1\Application\Home\Model\InboxModel.class.php 第 6 行.
+NOTIC: [8] Undefined variable: content D:\php\ahgfrx\1\Application\Home\Model\InboxModel.class.php 第 7 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000973s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001057s ]
+
+[ 2014-10-06T01:00:00+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001254s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002103s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.019513s ]
+NOTIC: [8] Undefined variable: fromuid D:\php\ahgfrx\1\Application\Home\Model\InboxModel.class.php 第 7 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000863s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000941s ]
+
+[ 2014-10-06T01:01:07+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000943s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001917s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.018739s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.017087s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( usernaem='璨神' ) LIMIT 1   [ RunTime:0.000833s ]
+ERR: 1054:Unknown column 'usernaem' in 'where clause'
+ [ SQL语句 ] : SELECT `uid` FROM `ahgfrx_user` WHERE ( usernaem='璨神' ) LIMIT 1  
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (null,1,2,'送达') [ RunTime:0.000313s ]
+ERR: 1048:Column 'uid1' cannot be null
+ [ SQL语句 ] : INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (null,1,2,'送达')
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001276s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001456s ]
+
+[ 2014-10-06T01:02:32+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001655s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003428s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.021184s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.022390s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神' ) LIMIT 1   [ RunTime:0.000513s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,2,1,'送达') [ RunTime:0.000260s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000988s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001086s ]
+
+[ 2014-10-06T01:03:10+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001194s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002093s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.024135s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.015132s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='�\�' ) LIMIT 1   [ RunTime:0.000469s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,3,2,'送达') [ RunTime:0.000618s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002028s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002154s ]
+
+[ 2014-10-06T01:04:11+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000824s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001439s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.018590s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.014888s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='松松' ) LIMIT 1   [ RunTime:0.000242s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000755s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000813s ]
+
+[ 2014-10-06T01:04:21+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001812s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.017289s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.021418s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神2�\�' ) LIMIT 1   [ RunTime:0.000334s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (3,3,1,'送达') [ RunTime:0.000640s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001227s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001315s ]
+
+[ 2014-10-06T01:04:54+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001208s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003060s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.017304s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.020381s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神2�\�' ) LIMIT 1   [ RunTime:0.000362s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,3,1,'123123') [ RunTime:0.000553s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001084s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001193s ]
+
+[ 2014-10-06T01:32:27+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000871s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001494s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.016293s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.020918s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神' ) LIMIT 1   [ RunTime:0.000356s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,2,1,'123123') [ RunTime:0.000297s ]
+USER: DEBUG:5
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001069s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001155s ]
+
+[ 2014-10-06T01:35:51+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002175s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006468s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.018937s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.015578s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神' ) LIMIT 1   [ RunTime:0.000253s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,2,1,'巴拉巴拉') [ RunTime:0.000211s ]
+
+[ 2014-10-06T01:36:40+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001075s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001825s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.022986s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.024733s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神' ) LIMIT 1   [ RunTime:0.000386s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,2,1,'巴拉巴拉') [ RunTime:0.000315s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.011216s ]
+NOTIC: [8] Undefined variable: session D:\php\ahgfrx\1\Application\Home\Model\InboxIndexModel.class.php 第 8 行.
+
+[ 2014-10-06T01:38:03+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001110s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001993s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.017218s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.018535s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神' ) LIMIT 1   [ RunTime:0.000241s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,2,1,'巴拉巴拉') [ RunTime:0.000304s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.009502s ]
+NOTIC: [8] Undefined variable: session D:\php\ahgfrx\1\Application\Home\Model\InboxIndexModel.class.php 第 12 行.
+
+[ 2014-10-06T01:38:34+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001232s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.020382s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.021716s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神' ) LIMIT 1   [ RunTime:0.000834s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,2,1,'璨神123123') [ RunTime:0.000558s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.012569s ]
+SQL: UPDATE `ahgfrx_inbox_index` SET `uid`=1,`touid`=2,`inbox_id`=9 WHERE ( uid=1 AND touid=2 ) [ RunTime:0.000341s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002262s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002406s ]
+
+[ 2014-10-06T01:40:15+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002324s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003011s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.016476s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.019098s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神' ) LIMIT 1   [ RunTime:0.000300s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,2,1,'巴拉巴拉') [ RunTime:0.000207s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.011624s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001125s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001213s ]
+
+[ 2014-10-06T01:47:36+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001866s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002987s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.021549s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.017403s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神' ) LIMIT 1   [ RunTime:0.000440s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,2,1,'123123') [ RunTime:0.000378s ]
+
+[ 2014-10-06T01:49:31+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001303s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002017s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.019822s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.014402s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神' ) LIMIT 1   [ RunTime:0.000356s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,2,1,'123123') [ RunTime:0.000317s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.013936s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid=1 AND touid=2 ) LIMIT 1   [ RunTime:0.000235s ]
+SQL: INSERT INTO `ahgfrx_inbox_index` (`uid`,`touid`,`inbox_id`) VALUES (1,2,12) [ RunTime:0.000241s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000758s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000823s ]
+
+[ 2014-10-06T01:49:52+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000956s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002045s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.017781s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.015126s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神' ) LIMIT 1   [ RunTime:0.000544s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,2,1,'123123') [ RunTime:0.000282s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.011545s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid=1 AND touid=2 ) LIMIT 1   [ RunTime:0.000196s ]
+SQL: INSERT INTO `ahgfrx_inbox_index` (`uid`,`touid`,`inbox_id`) VALUES (1,2,13) [ RunTime:0.000143s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000738s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000797s ]
+
+[ 2014-10-06T01:50:31+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002845s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.018041s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.016811s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神' ) LIMIT 1   [ RunTime:0.000465s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,2,1,'123123123') [ RunTime:0.000739s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.011370s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid=1 AND touid=2 ) LIMIT 1   [ RunTime:0.000238s ]
+SQL: UPDATE `ahgfrx_inbox_index` SET `uid`=1,`touid`=2,`inbox_id`=14 WHERE ( id=2 ) [ RunTime:0.000176s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000822s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000940s ]
+
+[ 2014-10-06T01:52:32+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002044s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.017577s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.018461s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神2�\�' ) LIMIT 1   [ RunTime:0.000290s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,3,1,'123123213再次测试�\�') [ RunTime:0.000289s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.010007s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid=1 AND touid=3 ) LIMIT 1   [ RunTime:0.000428s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001726s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001959s ]
+
+[ 2014-10-06T01:54:29+08:00 ] 127.0.0.1 /index.php/Home/Inbox
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001192s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002355s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.021672s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.019807s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神2�\�' ) LIMIT 1   [ RunTime:0.000340s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,3,1,'再次测试') [ RunTime:0.000223s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.010348s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid=1 AND touid=3 ) LIMIT 1   [ RunTime:0.000435s ]
+SQL: INSERT INTO `ahgfrx_inbox_index` (`uid`,`touid`,`inbox_id`) VALUES (1,3,16) [ RunTime:0.000399s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001229s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001346s ]
+
+[ 2014-10-06T01:54:50+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001749s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002540s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.016454s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.018504s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神2�\�' ) LIMIT 1   [ RunTime:0.000233s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,3,1,'再次2222') [ RunTime:0.000456s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.009611s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid=1 AND touid=3 ) LIMIT 1   [ RunTime:0.000444s ]
+SQL: INSERT INTO `ahgfrx_inbox_index` (`uid`,`touid`,`inbox_id`) VALUES (1,3,17) [ RunTime:0.000250s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000826s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000900s ]
+
+[ 2014-10-06T01:55:41+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001298s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002092s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.020136s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.013472s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神' ) LIMIT 1   [ RunTime:0.000347s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,2,1,'123') [ RunTime:0.000279s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.014010s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid=1 AND touid=2 ) LIMIT 1   [ RunTime:0.000229s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000990s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001089s ]
+
+[ 2014-10-06T01:58:55+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000685s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001218s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.016415s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.019363s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神2�\�' ) LIMIT 1   [ RunTime:0.000266s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,3,1,'123123') [ RunTime:0.000193s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.009601s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid=1 AND touid=3 ) LIMIT 1   [ RunTime:0.000254s ]
+SQL: INSERT INTO `ahgfrx_inbox_index` (`uid`,`touid`,`inbox_id`) VALUES (1,3,19) [ RunTime:0.000141s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000921s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000988s ]
+
+[ 2014-10-06T01:59:10+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000702s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001114s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.025281s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.028778s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神2�\�' ) LIMIT 1   [ RunTime:0.000290s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,3,1,'1232222') [ RunTime:0.000252s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.012633s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid=1 AND touid=3 ) LIMIT 1   [ RunTime:0.000205s ]
+SQL: UPDATE `ahgfrx_inbox_index` SET `uid`=1,`touid`=3,`inbox_id`=20 WHERE ( id=5 ) [ RunTime:0.000145s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000778s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000835s ]
+
+[ 2014-10-06T02:17:11+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000931s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001598s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.017726s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.018779s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神' ) LIMIT 1   [ RunTime:0.000237s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,2,1,'123123') [ RunTime:0.000222s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.012245s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid=1 AND touid=2 ) LIMIT 1   [ RunTime:0.000220s ]
+SQL: INSERT INTO `ahgfrx_inbox_index` (`uid`,`touid`,`inbox_id`,`numb`) VALUES (1,2,21,0) [ RunTime:0.000172s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000878s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000971s ]
+
+[ 2014-10-06T02:17:37+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002845s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003841s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.018096s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.018727s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神' ) LIMIT 1   [ RunTime:0.000394s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,2,1,'123123123') [ RunTime:0.000215s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.011274s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid=1 AND touid=2 ) LIMIT 1   [ RunTime:0.000392s ]
+SQL: UPDATE `ahgfrx_inbox_index` SET `uid`=1,`touid`=2,`inbox_id`=22,`numb`=0 WHERE ( id=6 ) [ RunTime:0.000210s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000944s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001051s ]
+
+[ 2014-10-06T02:19:16+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001012s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001763s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.022331s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.015329s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神' ) LIMIT 1   [ RunTime:0.000446s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,2,1,'123123') [ RunTime:0.000928s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.008791s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid=1 AND touid=2 ) LIMIT 1   [ RunTime:0.000647s ]
+SQL: UPDATE `ahgfrx_inbox_index` SET `uid`=1,`touid`=2,`inbox_id`=23,`numb`=numb+1 WHERE ( id=6 ) [ RunTime:0.030978s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001436s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001694s ]
+
+[ 2014-10-06T02:19:37+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001080s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001913s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.019874s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.018308s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神' ) LIMIT 1   [ RunTime:0.000423s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,2,1,'123123') [ RunTime:0.000158s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.010478s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid=1 AND touid=2 ) LIMIT 1   [ RunTime:0.000191s ]
+SQL: INSERT INTO `ahgfrx_inbox_index` (`uid`,`touid`,`inbox_id`,`numb`) VALUES (1,2,24,numb+1) [ RunTime:0.000120s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000734s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000791s ]
+
+[ 2014-10-06T02:19:50+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001111s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001804s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.020338s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.019044s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神' ) LIMIT 1   [ RunTime:0.000598s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,2,1,'12322222') [ RunTime:0.000368s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.008914s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid=1 AND touid=2 ) LIMIT 1   [ RunTime:0.000242s ]
+SQL: UPDATE `ahgfrx_inbox_index` SET `uid`=1,`touid`=2,`inbox_id`=25,`numb`=numb+1 WHERE ( id=7 ) [ RunTime:0.000169s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000785s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000842s ]
+
+[ 2014-10-06T02:22:30+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002736s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004903s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.015164s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.018452s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神' ) LIMIT 1   [ RunTime:0.000289s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,2,1,'123123') [ RunTime:0.000190s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.009207s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid=1 AND touid=2 ) LIMIT 1   [ RunTime:0.000217s ]
+SQL: INSERT INTO `ahgfrx_inbox_index` (`uid`,`touid`,`from`,`inbox_id`,`numb`) VALUES (1,2,1,26,numb+1) [ RunTime:0.000222s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001143s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001264s ]
+
+[ 2014-10-06T02:31:06+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001011s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001631s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.019469s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.013537s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神' ) LIMIT 1   [ RunTime:0.000290s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,2,1,'123123') [ RunTime:0.000204s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.014480s ]
+NOTIC: [8] Undefined variable: touid D:\php\ahgfrx\1\Application\Home\Model\InboxIndexModel.class.php 第 7 行.
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid=1 AND touid=0 ) LIMIT 1   [ RunTime:0.000187s ]
+ERR: 1054:Unknown column 'uid' in 'where clause'
+ [ SQL语句 ] : SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid=1 AND touid=0 ) LIMIT 1  
+SQL: INSERT INTO `ahgfrx_inbox_index` (`uid1`,`uid2`,`from`,`inbox_id`,`numb`) VALUES (1,2,1,27,numb+1) [ RunTime:0.000224s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000742s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000798s ]
+
+[ 2014-10-06T02:31:43+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001114s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002208s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.018645s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.016613s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神' ) LIMIT 1   [ RunTime:0.000325s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,2,1,'123123') [ RunTime:0.000225s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.012957s ]
+NOTIC: [8] Undefined variable: touid D:\php\ahgfrx\1\Application\Home\Model\InboxIndexModel.class.php 第 7 行.
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid=1 AND touid=0 ) LIMIT 1   [ RunTime:0.000144s ]
+ERR: 1054:Unknown column 'uid' in 'where clause'
+ [ SQL语句 ] : SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid=1 AND touid=0 ) LIMIT 1  
+SQL: INSERT INTO `ahgfrx_inbox_index` (`uid1`,`uid2`,`from`,`inbox_id`,`numb`) VALUES (1,2,1,28,numb+1) [ RunTime:0.000156s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000985s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001099s ]
+
+[ 2014-10-06T02:31:56+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001779s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.021934s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.021858s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神' ) LIMIT 1   [ RunTime:0.000855s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,2,1,'123222') [ RunTime:0.000215s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.010248s ]
+NOTIC: [8] Undefined variable: touid D:\php\ahgfrx\1\Application\Home\Model\InboxIndexModel.class.php 第 7 行.
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid=1 AND touid=0 ) LIMIT 1   [ RunTime:0.000511s ]
+ERR: 1054:Unknown column 'uid' in 'where clause'
+ [ SQL语句 ] : SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid=1 AND touid=0 ) LIMIT 1  
+SQL: INSERT INTO `ahgfrx_inbox_index` (`uid1`,`uid2`,`from`,`inbox_id`,`numb`) VALUES (1,2,1,29,numb+1) [ RunTime:0.000324s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001068s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001184s ]
+
+[ 2014-10-06T02:32:53+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001265s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001954s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.021384s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.018533s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神' ) LIMIT 1   [ RunTime:0.000338s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,2,1,'123123') [ RunTime:0.000182s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.013305s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid1=1 AND uid2=2 ) LIMIT 1   [ RunTime:0.000328s ]
+SQL: INSERT INTO `ahgfrx_inbox_index` (`uid1`,`uid2`,`from`,`inbox_id`,`numb`) VALUES (1,2,1,30,numb+1) [ RunTime:0.000196s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001116s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001226s ]
+
+[ 2014-10-06T02:33:04+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001208s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001953s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.021383s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.021805s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神' ) LIMIT 1   [ RunTime:0.001313s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,2,1,'22222') [ RunTime:0.000354s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.014340s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid1=1 AND uid2=2 ) LIMIT 1   [ RunTime:0.000294s ]
+SQL: UPDATE `ahgfrx_inbox_index` SET `uid1`=1,`uid2`=2,`from`=1,`inbox_id`=31,`numb`=numb+1 WHERE ( id=12 ) [ RunTime:0.000233s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001175s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001278s ]
+
+[ 2014-10-06T02:35:07+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001403s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003100s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.020846s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.017381s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神2�\�' ) LIMIT 1   [ RunTime:0.000274s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (null,3,1,'发给你的') [ RunTime:0.000154s ]
+ERR: 1048:Column 'uid1' cannot be null
+ [ SQL语句 ] : INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (null,3,1,'发给你的')
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000798s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000861s ]
+
+[ 2014-10-06T02:35:26+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000872s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001577s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.024146s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.016593s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神2�\�' ) LIMIT 1   [ RunTime:0.000390s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,3,1,'发给你的') [ RunTime:0.000208s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.011842s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid1=1 AND uid2=3 ) LIMIT 1   [ RunTime:0.000238s ]
+SQL: INSERT INTO `ahgfrx_inbox_index` (`uid1`,`uid2`,`from`,`inbox_id`,`numb`) VALUES (1,3,1,32,numb+1) [ RunTime:0.000156s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000853s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000921s ]
+
+[ 2014-10-06T02:46:38+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002184s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003877s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.014918s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.013120s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='�\�' ) LIMIT 1   [ RunTime:0.000263s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,1,1,'12312312321') [ RunTime:0.000157s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.009830s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid1=1 AND uid2=1 ) LIMIT 1   [ RunTime:0.000255s ]
+SQL: INSERT INTO `ahgfrx_inbox_index` (`uid1`,`uid2`,`from`,`inbox_id`,`numb`) VALUES (1,1,1,33,numb+1) [ RunTime:0.000184s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000755s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000814s ]
+
+[ 2014-10-06T02:47:25+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001550s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002580s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.017285s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.016312s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='�\�' ) LIMIT 1   [ RunTime:0.000274s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,3,2,'123123123') [ RunTime:0.000156s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.010122s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid1=1 AND uid2=3 ) LIMIT 1   [ RunTime:0.000474s ]
+SQL: UPDATE `ahgfrx_inbox_index` SET `uid1`=1,`uid2`=3,`from`=2,`inbox_id`=34,`numb`=numb+1 WHERE ( id=13 ) [ RunTime:0.000537s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001012s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001089s ]
+
+[ 2014-10-06T02:51:53+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000609s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001059s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.015179s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.014906s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神2�\�' ) LIMIT 1   [ RunTime:0.000329s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,3,1,'11111') [ RunTime:0.000232s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.010211s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid1=1 AND uid2=3 ) LIMIT 1   [ RunTime:0.000305s ]
+SQL: UPDATE `ahgfrx_inbox_index` SET `uid1`=1,`uid2`=3,`from`=1,`inbox_id`=35,`numb`=numb+1 WHERE ( id=13 ) [ RunTime:0.000217s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000760s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000816s ]
+
+[ 2014-10-06T02:53:34+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001893s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004195s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.017838s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.020962s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='�\�' ) LIMIT 1   [ RunTime:0.000255s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,3,2,'你好啊，能向你请教一个事情吗') [ RunTime:0.000173s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.011531s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid1=1 AND uid2=3 ) LIMIT 1   [ RunTime:0.000629s ]
+SQL: INSERT INTO `ahgfrx_inbox_index` (`uid1`,`uid2`,`from`,`inbox_id`,`numb`) VALUES (1,3,2,36,numb+1) [ RunTime:0.000210s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001099s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001197s ]
+
+[ 2014-10-06T02:55:09+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001060s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001737s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.015639s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.014677s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神2�\�' ) LIMIT 1   [ RunTime:0.000286s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,3,1,'可以�\�') [ RunTime:0.000200s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.011964s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid1=1 AND uid2=3 ) LIMIT 1   [ RunTime:0.000309s ]
+SQL: UPDATE `ahgfrx_inbox_index` SET `uid1`=1,`uid2`=3,`from`=1,`inbox_id`=37,`numb`=numb+1 WHERE ( id=15 ) [ RunTime:0.000271s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000850s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000927s ]
+
+[ 2014-10-06T10:01:36+08:00 ] 127.0.0.1 /index.php/Home/Inboxpage
+ERR: 无法加载控制器:Inboxpage
+
+[ 2014-10-06T10:01:44+08:00 ] 127.0.0.1 /index.php/Home/Inbox/inboxpage
+ERR: 参数错误或者未定义:uid
+
+[ 2014-10-06T10:02:46+08:00 ] 127.0.0.1 /index.php/Home/Inboxpage//1
+ERR: 无法加载控制器:Inboxpage
+
+[ 2014-10-06T10:02:51+08:00 ] 127.0.0.1 /index.php/Home/Inboxpage//1
+ERR: 无法加载控制器:Inboxpage
+
+[ 2014-10-06T10:02:53+08:00 ] 127.0.0.1 /index.php/Home/Inboxpage/1
+ERR: 无法加载控制器:Inboxpage
+
+[ 2014-10-06T10:03:02+08:00 ] 127.0.0.1 /index.php/Home/Inboxpage/1
+ERR: 无法加载控制器:Inboxpage
+
+[ 2014-10-06T10:03:03+08:00 ] 127.0.0.1 /index.php/Home/Inboxpage/1
+ERR: 无法加载控制器:Inboxpage
+
+[ 2014-10-06T10:03:41+08:00 ] 127.0.0.1 /index.php/Home/Inboxpage
+ERR: 无法加载控制器:Inboxpage
+
+[ 2014-10-06T10:04:20+08:00 ] 127.0.0.1 /index.php/Home/Inboxpage/1
+ERR: 无法加载控制器:Inboxpage
+
+[ 2014-10-06T10:04:22+08:00 ] 127.0.0.1 /index.php/Home/Inboxpage//1
+ERR: 无法加载控制器:Inboxpage
+
+[ 2014-10-06T10:04:38+08:00 ] 127.0.0.1 /index.php/Home/Inboxpage/1
+ERR: 无法加载控制器:Inboxpage
+
+[ 2014-10-06T10:09:05+08:00 ] 127.0.0.1 /index.php/Home/%7B'/Home/Inboxpage/'.($vo['uid1']%20==%20cookie('user_id')?$vo[%27uid2%27]:$vo[%27uid1%27])}
+ERR: 无法加载控制器:{'
+
+[ 2014-10-06T10:09:31+08:00 ] 127.0.0.1 /index.php/Home/%7B'/Home/Inboxpage/'.($vo['uid1']%20==%20cookie('user_id')?$vo[%27uid2%27]:$vo[%27uid1%27])}
+ERR: 无法加载控制器:{'
+
+[ 2014-10-06T10:09:34+08:00 ] 127.0.0.1 /index.php/Home/%7B'/Home/Inboxpage/'.$vo['uid1']%20==%20cookie('user_id')?$vo[%27uid2%27]:$vo[%27uid1%27]}
+ERR: 无法加载控制器:{'
+
+[ 2014-10-06T10:10:06+08:00 ] 127.0.0.1 /index.php/Home/Inbox/1.html
+ERR: 非法操作:1
+
+[ 2014-10-06T10:10:34+08:00 ] 127.0.0.1 /index.php/Home/Inbox/1.html
+ERR: 非法操作:1
+
+[ 2014-10-06T10:11:15+08:00 ] 127.0.0.1 /index.php/Home/Inbox/1.html
+ERR: 非法操作:1
+
+[ 2014-10-06T10:11:57+08:00 ] 127.0.0.1 /index.php/Home/'/Home/Inboxpage/'1
+ERR: 无法加载控制器:'
+
+[ 2014-10-06T10:12:06+08:00 ] 127.0.0.1 /index.php/Home/'/Home/Inboxpage/1
+ERR: 无法加载控制器:'
+
+[ 2014-10-06T10:12:12+08:00 ] 127.0.0.1 /index.php/Home/'/Home/Inboxpage/1
+ERR: 无法加载控制器:'
+
+[ 2014-10-06T10:36:58+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000730s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001427s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.015091s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.014475s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='�\�' ) LIMIT 1   [ RunTime:0.000232s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,3,2,'你说怎么�\�') [ RunTime:0.000176s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.010228s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid1=1 AND uid2=3 ) LIMIT 1   [ RunTime:0.000225s ]
+SQL: UPDATE `ahgfrx_inbox_index` SET `uid1`=1,`uid2`=3,`from`=2,`inbox_id`=39,`numb`=numb+1 WHERE ( id=15 ) [ RunTime:0.000205s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001080s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001171s ]
+
+[ 2014-10-06T10:37:23+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000673s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001169s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.016582s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.013120s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神2�\�' ) LIMIT 1   [ RunTime:0.000357s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,3,1,'这样这样') [ RunTime:0.000328s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.009163s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid1=1 AND uid2=3 ) LIMIT 1   [ RunTime:0.000285s ]
+SQL: UPDATE `ahgfrx_inbox_index` SET `uid1`=1,`uid2`=3,`from`=1,`inbox_id`=40,`numb`=numb+1 WHERE ( id=15 ) [ RunTime:0.000200s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001100s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001202s ]
+
+[ 2014-10-06T10:41:49+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000612s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001107s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.016252s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.013719s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='�\�' ) LIMIT 1   [ RunTime:0.000275s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,3,2,'好的多谢�\�') [ RunTime:0.000216s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.008960s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid1=1 AND uid2=3 ) LIMIT 1   [ RunTime:0.000379s ]
+SQL: UPDATE `ahgfrx_inbox_index` SET `uid1`=1,`uid2`=3,`from`=2,`inbox_id`=41,`numb`=numb+1 WHERE ( id=15 ) [ RunTime:0.000439s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000909s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001003s ]
+
+[ 2014-10-06T10:42:19+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000633s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001091s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.013729s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.012681s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神' ) LIMIT 1   [ RunTime:0.000339s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,2,1,'你看这样可好') [ RunTime:0.000290s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.009470s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid1=1 AND uid2=2 ) LIMIT 1   [ RunTime:0.000236s ]
+SQL: INSERT INTO `ahgfrx_inbox_index` (`uid1`,`uid2`,`from`,`inbox_id`,`numb`) VALUES (1,2,1,42,numb+1) [ RunTime:0.000205s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001034s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001121s ]
+
+[ 2014-10-06T10:53:39+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000747s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001091s ]
+
+[ 2014-10-06T10:54:04+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000633s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000958s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.013076s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.013500s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神2�\�' ) LIMIT 1   [ RunTime:0.000268s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,3,1,'InboxAlert测试') [ RunTime:0.000199s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_alert` [ RunTime:0.009418s ]
+ERR: Think\Model:new_send方法不存在！
+
+[ 2014-10-06T10:54:06+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000889s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001474s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.014669s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.012629s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神2�\�' ) LIMIT 1   [ RunTime:0.000299s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,3,1,'InboxAlert测试') [ RunTime:0.000270s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_alert` [ RunTime:0.008706s ]
+ERR: Think\Model:new_send方法不存在！
+
+[ 2014-10-06T10:56:04+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001115s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.016223s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.015558s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神2�\�' ) LIMIT 1   [ RunTime:0.000299s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,3,1,'InboxAlert测试') [ RunTime:0.000263s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_alert` [ RunTime:0.010458s ]
+ERR: Think\Model:new_send方法不存在！
+
+[ 2014-10-06T10:57:56+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000711s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001226s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.014717s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.013017s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神2�\�' ) LIMIT 1   [ RunTime:0.000315s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,3,1,'InboxAlert测试') [ RunTime:0.000475s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_alert` [ RunTime:0.013427s ]
+ERR: Think\Model:new_send方法不存在！
+
+[ 2014-10-06T10:59:14+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000653s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001181s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.018986s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.013626s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神2�\�' ) LIMIT 1   [ RunTime:0.000269s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,3,1,'InboxAlert测试') [ RunTime:0.000222s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_alert` [ RunTime:0.010032s ]
+SQL: SELECT `uid` FROM `ahgfrx_inbox_alert` WHERE ( uid=3 ) LIMIT 1   [ RunTime:0.000417s ]
+SQL: INSERT INTO `ahgfrx_inbox_alert` (`uid`,`numb`) VALUES (null,numb+1) [ RunTime:0.000172s ]
+ERR: 1048:Column 'uid' cannot be null
+ [ SQL语句 ] : INSERT INTO `ahgfrx_inbox_alert` (`uid`,`numb`) VALUES (null,numb+1)
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000801s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000856s ]
+
+[ 2014-10-06T11:00:12+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000589s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000915s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.016081s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.014705s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神2�\�' ) LIMIT 1   [ RunTime:0.000331s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,3,1,'InboxAlert测试') [ RunTime:0.000215s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_alert` [ RunTime:0.008646s ]
+SQL: SELECT `uid` FROM `ahgfrx_inbox_alert` WHERE ( uid=3 ) LIMIT 1   [ RunTime:0.000264s ]
+SQL: INSERT INTO `ahgfrx_inbox_alert` (`uid`,`numb`) VALUES (3,numb+1) [ RunTime:0.000206s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.010094s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid1=1 AND uid2=3 ) LIMIT 1   [ RunTime:0.000212s ]
+SQL: UPDATE `ahgfrx_inbox_index` SET `uid1`=1,`uid2`=3,`from`=1,`inbox_id`=48,`numb`=numb+1 WHERE ( id=15 ) [ RunTime:0.000155s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000737s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000796s ]
+
+[ 2014-10-06T11:00:30+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001277s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002039s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.014360s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.015131s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神2�\�' ) LIMIT 1   [ RunTime:0.000323s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,3,1,'InboxAlert测试InboxAlert测试') [ RunTime:0.000363s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_alert` [ RunTime:0.009716s ]
+SQL: SELECT `uid` FROM `ahgfrx_inbox_alert` WHERE ( uid=3 ) LIMIT 1   [ RunTime:0.000243s ]
+SQL: UPDATE `ahgfrx_inbox_alert` SET `uid`=3,`numb`=numb+1 WHERE ( id=3 ) [ RunTime:0.000171s ]
+ERR: 1054:Unknown column 'id' in 'where clause'
+ [ SQL语句 ] : UPDATE `ahgfrx_inbox_alert` SET `uid`=3,`numb`=numb+1 WHERE ( id=3 )
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000948s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001030s ]
+
+[ 2014-10-06T11:01:27+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001049s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001400s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.016267s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.014168s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神2�\�' ) LIMIT 1   [ RunTime:0.000328s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,3,1,'InboxAlert测试InboxAlert测试InboxAlert测试InboxAlert测试InboxAlert测试InboxAlert测试') [ RunTime:0.000392s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_alert` [ RunTime:0.008970s ]
+SQL: SELECT `uid` FROM `ahgfrx_inbox_alert` WHERE ( uid=3 ) LIMIT 1   [ RunTime:0.000222s ]
+SQL: UPDATE `ahgfrx_inbox_alert` SET `uid`=3,`numb`=numb+1 WHERE ( uid=3 ) [ RunTime:0.000177s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.009739s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid1=1 AND uid2=3 ) LIMIT 1   [ RunTime:0.000206s ]
+SQL: UPDATE `ahgfrx_inbox_index` SET `uid1`=1,`uid2`=3,`from`=1,`inbox_id`=50,`numb`=numb+1 WHERE ( id=15 ) [ RunTime:0.000138s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000757s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000819s ]
+
+[ 2014-10-06T11:11:24+08:00 ] 127.0.0.1 /index.php/Home/Inboxpage/1
+ERR: XML标签语法错误 : conditon="M('InboxAlert')-
+
+[ 2014-10-06T11:12:48+08:00 ] 127.0.0.1 /index.php/Home/Inboxpage/1
+ERR: XML标签语法错误 : conditon="{M('InboxAlert')-
+
+[ 2014-10-06T11:12:59+08:00 ] 127.0.0.1 /index.php/Home/Inboxpage/1
+ERR: XML标签语法错误 : conditon="M('InboxAlert')-
+
+[ 2014-10-06T11:13:00+08:00 ] 127.0.0.1 /index.php/Home/Inboxpage/1
+ERR: XML标签语法错误 : conditon="M('InboxAlert')-
+
+[ 2014-10-06T11:20:54+08:00 ] 127.0.0.1 /index.php/Home/Inboxpage/1
+USER: DEBUG:2
+USER: DEBUG:2
+
+[ 2014-10-06T11:21:18+08:00 ] 127.0.0.1 /index.php/Home/Inboxpage/1
+USER: DEBUG:2
+USER: DEBUG:2
+USER: DEBUG:2
+USER: DEBUG:2
+
+[ 2014-10-06T11:24:43+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+USER: DEBUG:2
+USER: DEBUG:2
+USER: DEBUG:2
+USER: DEBUG:2
+
+[ 2014-10-06T11:24:49+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+USER: DEBUG:2
+USER: DEBUG:2
+USER: DEBUG:2
+USER: DEBUG:2
+
+[ 2014-10-06T11:26:43+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001365s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.016107s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.015801s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='�\�' ) LIMIT 1   [ RunTime:0.000288s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,3,2,'提示测试') [ RunTime:0.000254s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_alert` [ RunTime:0.011192s ]
+SQL: SELECT `uid` FROM `ahgfrx_inbox_alert` WHERE ( uid=1 ) LIMIT 1   [ RunTime:0.000237s ]
+SQL: INSERT INTO `ahgfrx_inbox_alert` (`uid`,`numb`) VALUES (1,numb+1) [ RunTime:0.000180s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.009907s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid1=1 AND uid2=3 ) LIMIT 1   [ RunTime:0.000208s ]
+SQL: UPDATE `ahgfrx_inbox_index` SET `uid1`=1,`uid2`=3,`from`=2,`inbox_id`=51,`numb`=numb+1 WHERE ( id=15 ) [ RunTime:0.000153s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000717s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000776s ]
+
+[ 2014-10-06T13:11:05+08:00 ] 127.0.0.1 /index.php/Home/Member.html
+ERR: 错误的查询条件:[name=>uid]
+
+[ 2014-10-06T13:24:30+08:00 ] 127.0.0.1 /index.php/Home/Inform.html
+NOTIC: [8] Undefined offset: 1 D:\php\ahgfrx\1\ThinkPHP\Library\Think\Route.class.php 第 128 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000546s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000605s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inform` [ RunTime:0.013380s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.016936s ]
+SQL: SELECT `admin` FROM `ahgfrx_user` WHERE ( uid=&d ) LIMIT 1   [ RunTime:0.000159s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '&d ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `admin` FROM `ahgfrx_user` WHERE ( uid=&d ) LIMIT 1  
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000732s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000795s ]
+
+[ 2014-10-06T13:24:36+08:00 ] 127.0.0.1 /index.php/Home/Inform.html
+NOTIC: [8] Undefined offset: 1 D:\php\ahgfrx\1\ThinkPHP\Library\Think\Route.class.php 第 128 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000819s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000910s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inform` [ RunTime:0.015210s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.016280s ]
+SQL: SELECT `admin` FROM `ahgfrx_user` WHERE ( uid=&d ) LIMIT 1   [ RunTime:0.000134s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '&d ) LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `admin` FROM `ahgfrx_user` WHERE ( uid=&d ) LIMIT 1  
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000709s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000761s ]
+
+[ 2014-10-06T13:25:36+08:00 ] 127.0.0.1 /index.php/Home/Inform.html
+NOTIC: [8] Undefined offset: 1 D:\php\ahgfrx\1\ThinkPHP\Library\Think\Route.class.php 第 128 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000589s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000651s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inform` [ RunTime:0.014594s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.016329s ]
+SQL: SELECT `admin` FROM `ahgfrx_user` WHERE ( uid=3 ) LIMIT 1   [ RunTime:0.000284s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000739s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000796s ]
+
+[ 2014-10-06T13:25:41+08:00 ] 127.0.0.1 /index.php/Home/Inform.html
+NOTIC: [8] Undefined offset: 1 D:\php\ahgfrx\1\ThinkPHP\Library\Think\Route.class.php 第 128 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000591s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000663s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inform` [ RunTime:0.014501s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.016632s ]
+SQL: SELECT `admin` FROM `ahgfrx_user` WHERE ( uid=1 ) LIMIT 1   [ RunTime:0.000276s ]
+SQL: INSERT INTO `ahgfrx_inform` (`uid`,`content`,`class_id`,`project_id`) VALUES (1,'管理�\�',1,0) [ RunTime:0.000212s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001026s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001136s ]
+
+[ 2014-10-06T13:25:48+08:00 ] 127.0.0.1 /index.php/Home/Inform.html
+NOTIC: [8] Undefined offset: 1 D:\php\ahgfrx\1\ThinkPHP\Library\Think\Route.class.php 第 128 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000731s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inform` [ RunTime:0.014327s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.015738s ]
+SQL: SELECT `admin` FROM `ahgfrx_user` WHERE ( uid=1 ) LIMIT 1   [ RunTime:0.000300s ]
+SQL: INSERT INTO `ahgfrx_inform` (`uid`,`content`,`class_id`,`project_id`) VALUES (1,'管理�\�123',1,0) [ RunTime:0.000206s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000778s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000849s ]
+
+[ 2014-10-06T13:26:07+08:00 ] 127.0.0.1 /index.php/Home/Inform.html
+NOTIC: [8] Undefined offset: 1 D:\php\ahgfrx\1\ThinkPHP\Library\Think\Route.class.php 第 128 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000646s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000701s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inform` [ RunTime:0.013668s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.017538s ]
+SQL: SELECT `admin` FROM `ahgfrx_user` WHERE ( uid=3 ) LIMIT 1   [ RunTime:0.000265s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000808s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000866s ]
+
+[ 2014-10-06T13:26:18+08:00 ] 127.0.0.1 /index.php/Home/Inform.html
+NOTIC: [8] Undefined offset: 1 D:\php\ahgfrx\1\ThinkPHP\Library\Think\Route.class.php 第 128 行.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000830s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000934s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inform` [ RunTime:0.015118s ]
+SQL: INSERT INTO `ahgfrx_inform` (`uid`,`content`,`class_id`,`project_id`) VALUES (3,'管理�\�',2,9) [ RunTime:0.000262s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001025s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001119s ]
+
+[ 2014-10-06T14:04:49+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000875s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001293s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.015823s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.016858s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='�\�' ) LIMIT 1   [ RunTime:0.000300s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,3,2,'快完成了，加�\�') [ RunTime:0.000245s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_alert` [ RunTime:0.008602s ]
+SQL: SELECT `uid` FROM `ahgfrx_inbox_alert` WHERE ( uid=1 ) LIMIT 1   [ RunTime:0.000250s ]
+SQL: UPDATE `ahgfrx_inbox_alert` SET `uid`=1,`numb`=numb+1 WHERE ( uid=1 ) [ RunTime:0.000226s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.008939s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid1=1 AND uid2=3 ) LIMIT 1   [ RunTime:0.000298s ]
+SQL: UPDATE `ahgfrx_inbox_index` SET `uid1`=1,`uid2`=3,`from`=2,`inbox_id`=52,`numb`=numb+1 WHERE ( id=15 ) [ RunTime:0.000212s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000713s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000769s ]
+
+[ 2014-10-06T14:09:45+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000982s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001636s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.025486s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.022141s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='�\�' ) LIMIT 1   [ RunTime:0.000281s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,3,2,'快完成了') [ RunTime:0.000338s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_alert` [ RunTime:0.012245s ]
+SQL: SELECT `uid` FROM `ahgfrx_inbox_alert` WHERE ( uid=1 ) LIMIT 1   [ RunTime:0.000206s ]
+SQL: UPDATE `ahgfrx_inbox_alert` SET `uid`=1,`numb`=numb+1 WHERE ( uid=1 ) [ RunTime:0.000189s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.011023s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid1=1 AND uid2=3 ) LIMIT 1   [ RunTime:0.000639s ]
+SQL: UPDATE `ahgfrx_inbox_index` SET `uid1`=1,`uid2`=3,`from`=2,`inbox_id`=53,`numb`=numb+1 WHERE ( id=15 ) [ RunTime:0.000351s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001097s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001219s ]
+
+[ 2014-10-06T14:38:05+08:00 ] 127.0.0.1 /index.php/Home/Inbox.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000741s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001152s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox` [ RunTime:0.020339s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_user` [ RunTime:0.019195s ]
+SQL: SELECT `uid` FROM `ahgfrx_user` WHERE ( username='璨神' ) LIMIT 1   [ RunTime:0.000506s ]
+SQL: INSERT INTO `ahgfrx_inbox` (`uid1`,`uid2`,`from`,`content`) VALUES (1,2,1,'不好�\�') [ RunTime:0.000431s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_alert` [ RunTime:0.011161s ]
+SQL: SELECT `uid` FROM `ahgfrx_inbox_alert` WHERE ( uid=2 ) LIMIT 1   [ RunTime:0.000235s ]
+SQL: INSERT INTO `ahgfrx_inbox_alert` (`uid`,`numb`) VALUES (2,numb+1) [ RunTime:0.000192s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_inbox_index` [ RunTime:0.014693s ]
+SQL: SELECT `id` FROM `ahgfrx_inbox_index` WHERE ( uid1=1 AND uid2=2 ) LIMIT 1   [ RunTime:0.000350s ]
+SQL: UPDATE `ahgfrx_inbox_index` SET `uid1`=1,`uid2`=2,`from`=1,`inbox_id`=54,`numb`=numb+1 WHERE ( id=16 ) [ RunTime:0.000285s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001006s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001094s ]
+
+[ 2014-10-06T19:24:42+08:00 ] 127.0.0.1 /index.php/Home/Project/plist
+ERR: 模板不存在:./Application/Home/View/Project/plist.html
+
+[ 2014-10-06T20:19:36+08:00 ] 127.0.0.1 /index.php/Home/Projecsearch/lang/c++
+ERR: 无法加载控制器:Projecsearch
+
+[ 2014-10-06T20:40:07+08:00 ] 127.0.0.1 /index.php/Home/Projectsearch.html/name/test
+ERR: 无法加载控制器:Projectsearch.html
+
+[ 2014-10-06T22:00:21+08:00 ] 127.0.0.1 /index.php/Home/Team
+ERR: 无法加载控制器:Team
+
+[ 2014-10-06T22:00:35+08:00 ] 127.0.0.1 /index.php/Home/Team
+ERR: 无法加载控制器:Team
+
+[ 2014-10-06T22:02:09+08:00 ] 127.0.0.1 /index.php/Home/Team/1
+ERR: 参数错误或者未定义:tid
+
+[ 2014-10-06T22:08:40+08:00 ] 127.0.0.1 /Home/Project/6
+ERR: XML标签语法错误 : condition="$admin OR $is_member" /
+

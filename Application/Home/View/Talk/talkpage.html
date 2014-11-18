@@ -1,0 +1,64 @@
+<extend name="Base/common"/>
+<block name="body">
+
+<title>{$talk_pagecon['title']} - 讨论中心</title>
+<div class="container">
+
+<div class="page-header">
+  <h3>{$talk_pagecon['title']}<br />
+  <small><span class="glyphicon glyphicon-user"></span> {:getUsername($talk_pagecon['uid'])}  <span class="glyphicon glyphicon-comment"></span> {:getTalkclassname($talk_pagecon['class'])}</small></h3>
+</div>
+
+<div class="row">
+	<div class="col-md-9">
+<p>{:nl2br($talk_pagecon['content'])}</p>
+<small><p class="text-right"><b>主题内容</b> {$talk_pagecon['time']}</p></small>
+<hr>
+
+<volist name="talk_comment" id="vo">
+<b>{:getUsername($vo['uid'])}：</b>
+<p>{:nl2br($vo['content'])}</p>
+<small><p class="text-right"><b>#{$i+$talk_page_numb}</b> {$vo['time']}</p></small>
+<hr>
+</volist>
+
+<if condition="($talk_count gt ($talk_page_numb+30)) OR ($talk_count gt 30)">
+<ul class="pager">
+  <li class="previous {$talk_page_numb-30<0?'disabled':''}"><a href="{:U('/Home/Talkpage/'.$tid.'/'.($talk_page_numb-30))}">&larr; 上一页</a></li>
+  <li class="next {$talk_page_numb+30>=$talk_count?'disabled':''}"><a href="{:U('/Home/Talkpage/'.$tid.'/'.($talk_page_numb+30))}">下一页 &rarr;</a></li>
+</ul>
+</if>
+
+<form method="post" action="__SELF__">
+<input type="hidden" name="type" value="create">
+<div class="col-md-10"><textarea id="content" class="form-control" rows="3" name="content" placeholder="评论些什么吧" required></textarea>
+</div>
+<div><button type="submit" class="btn btn-success">提交</button></div>
+</form>
+
+	</div><!--col-md-9-->
+	<div class="col-md-3">
+
+<!--资料列表-->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">讨论类目</h3>
+  </div>
+  <div class="panel-body">
+<ul class="nav nav-pills nav-stacked" role="tablist">
+  <li role="presentation" id="talk_0"><a href="{:U('/Home/Talk.html/0/')}">所有</a></li>
+  <volist name="talk_class" id="vo">
+  <li role="presentation" id="talk_{$vo['id']}"><a href="{:U('/Home/Talk.html/'.$vo['id'])}">{$vo['name']}</a></li>
+  </volist>
+</ul>
+
+  </div>
+</div>
+<!--/资料列表-->
+
+	</div><!--col-md-3-->
+</div><!--row-->
+</div><!--container-->
+
+
+</block>

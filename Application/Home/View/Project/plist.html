@@ -1,0 +1,60 @@
+<extend name="Base/common"/>
+
+<block name="body">
+<style type="text/css">
+.form-create {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-project a:hover{
+  TEXT-DECORATION:none;
+}
+</style>
+<title>项目列表 - 社团中心</title>
+<div class="container"><!--container-->
+<div class="row"><!--row-->
+<div class="col-md-9">
+  <volist name="plist" id="vo">
+   <h4><a href="{:U('/Home/Project/'.$vo['id'])}" target="_BLANK">{$vo['name']}</a><span style="float:right"><span class="glyphicon glyphicon-user"></span> {:getUsername($vo['uid'])}</span></h4>
+   <small>{:mb_substr($vo['content'],0,100,"utf8")}...<span style="float:right"><span class="glyphicon glyphicon-pencil"></span> {$vo['lang']}</span></small>
+   <hr>
+   </volist>
+<if condition="($plist_count gt ($plist_numb+30)) OR ($plist_count gt 30)">
+<ul class="pager">
+  <li class="previous {$plist_numb-30<0?'disabled':''}"><a href="{:U('/Home/Projectlist/'.($plist_numb-30))}">&larr; 上一页</a></li>
+  <li class="next"><a href="{:U('/Home/Projectlist/'.($plist_numb+30))}">下一页 &rarr;</a></li>
+</ul>
+</if>
+
+</div><!--col-md-9-->
+
+<div class="col-md-3" id="space_height">
+  
+<script type="text/javascript">
+function plist_search(class_name){
+  location.replace('/Home/Projectsearch/'+class_name+'/'+$("#plish_search_input").val());
+}
+</script>
+
+<div class="input-group">
+          <input type="text" class="form-control" id="plish_search_input">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">搜索 <span class="caret"></span></button>
+            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+              <li><a href="#" onclick="plist_search('name')">在项目名称中搜索</a></li>
+              <li><a href="#" onclick="plist_search('lang')">在所属语言中搜索</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+        </div>
+
+</div><!--col-md-3-->
+
+</div><!--/container-->
+</div><!--/row-->
+
+<script type="text/javascript">
+  document.getElementById("project").className="active";
+</script>
+
+</block>

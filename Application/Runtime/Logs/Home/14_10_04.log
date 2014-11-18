@@ -1,0 +1,388 @@
+[ 2014-10-04T00:29:11+08:00 ] 127.0.0.1 /index.php/Home/Project/1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000993s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001586s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000850s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000945s ]
+
+[ 2014-10-04T00:46:01+08:00 ] 127.0.0.1 /index.php/Home/Project/1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000881s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001428s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000573s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000652s ]
+
+[ 2014-10-04T00:46:03+08:00 ] 127.0.0.1 /index.php/Home/Project/1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000985s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000587s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000656s ]
+
+[ 2014-10-04T00:46:14+08:00 ] 127.0.0.1 /index.php/Home/Project/1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000925s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001355s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000721s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000800s ]
+
+[ 2014-10-04T01:10:13+08:00 ] 127.0.0.1 /index.php/Home/Project/1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001132s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001468s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_join` [ RunTime:0.013217s ]
+NOTIC: [8] Undefined variable: project_setadmin D:\php\ahgfrx\1\Application\Home\Controller\ProjectController.class.php 第 62 行.
+
+[ 2014-10-04T01:10:45+08:00 ] 127.0.0.1 /index.php/Home/Project/1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000736s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001129s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_join` [ RunTime:0.009420s ]
+SQL: SELECT * FROM `ahgfrx_project_join` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.000344s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_member` [ RunTime:0.006767s ]
+SQL: INSERT INTO `ahgfrx_project_member` (`pid`,`uid`,`admin`) VALUES (1,3,0) [ RunTime:0.003322s ]
+SQL: UPDATE `ahgfrx_project_join` SET `allow`=1 WHERE `id` = 3 [ RunTime:0.001542s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000890s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000955s ]
+
+[ 2014-10-04T01:15:13+08:00 ] 127.0.0.1 /index.php/Home/Project/1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000946s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_member` [ RunTime:0.009495s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project` [ RunTime:0.011067s ]
+SQL: SELECT * FROM `ahgfrx_project` WHERE ( id=1 AND uid=1 ) LIMIT 1   [ RunTime:0.000411s ]
+SQL: SELECT * FROM `ahgfrx_project_member` WHERE ( pid=1 AND uid=1 AND admin=1 ) LIMIT 1   [ RunTime:0.000349s ]
+SQL: SELECT * FROM `ahgfrx_project_member` WHERE ( pid=1 AND uid=3 ) LIMIT 1   [ RunTime:0.000293s ]
+SQL: DELETE FROM `ahgfrx_project_member` WHERE ( pid=1 AND uid=3 ) [ RunTime:0.024370s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000890s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000973s ]
+
+[ 2014-10-04T01:15:19+08:00 ] 127.0.0.1 /index.php/Home/Project/1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000648s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001139s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_join` [ RunTime:0.009554s ]
+SQL: SELECT * FROM `ahgfrx_project_join` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.000338s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_member` [ RunTime:0.006958s ]
+SQL: INSERT INTO `ahgfrx_project_member` (`pid`,`uid`,`admin`) VALUES (1,3,0) [ RunTime:0.000261s ]
+SQL: UPDATE `ahgfrx_project_join` SET `allow`=1 WHERE `id` = 3 [ RunTime:0.000243s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000760s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000824s ]
+
+[ 2014-10-04T01:15:43+08:00 ] 127.0.0.1 /index.php/Home/Project/1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000666s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001020s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_member` [ RunTime:0.009374s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project` [ RunTime:0.010902s ]
+SQL: SELECT * FROM `ahgfrx_project` WHERE ( id=1 AND uid=1 ) LIMIT 1   [ RunTime:0.000346s ]
+SQL: SELECT * FROM `ahgfrx_project_member` WHERE ( pid=1 AND uid=1 AND admin=1 ) LIMIT 1   [ RunTime:0.000255s ]
+SQL: SELECT * FROM `ahgfrx_project_member` WHERE ( pid=1 AND uid=3 ) LIMIT 1   [ RunTime:0.000200s ]
+SQL: DELETE FROM `ahgfrx_project_member` WHERE ( pid=1 AND uid=3 ) [ RunTime:0.000175s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001394s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001464s ]
+
+[ 2014-10-04T01:15:50+08:00 ] 127.0.0.1 /index.php/Home/Project/1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000530s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000873s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_join` [ RunTime:0.009995s ]
+SQL: SELECT * FROM `ahgfrx_project_join` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.000296s ]
+SQL: UPDATE `ahgfrx_project_join` SET `allow`=2 WHERE `id` = 3 [ RunTime:0.000194s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000790s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000857s ]
+
+[ 2014-10-04T01:16:25+08:00 ] 127.0.0.1 /index.php/Home/Project/1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000846s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_join` [ RunTime:0.009413s ]
+SQL: SELECT * FROM `ahgfrx_project_join` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.000347s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_member` [ RunTime:0.007377s ]
+SQL: INSERT INTO `ahgfrx_project_member` (`pid`,`uid`,`admin`) VALUES (1,3,0) [ RunTime:0.000267s ]
+SQL: UPDATE `ahgfrx_project_join` SET `allow`=1 WHERE `id` = 3 [ RunTime:0.000246s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000747s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000811s ]
+
+[ 2014-10-04T01:16:59+08:00 ] 127.0.0.1 /index.php/Home/Project/1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000719s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001133s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_member` [ RunTime:0.009319s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project` [ RunTime:0.012640s ]
+SQL: SELECT * FROM `ahgfrx_project` WHERE ( id=1 AND uid=1 ) LIMIT 1   [ RunTime:0.000344s ]
+SQL: SELECT * FROM `ahgfrx_project_member` WHERE ( pid=1 AND uid=1 AND admin=1 ) LIMIT 1   [ RunTime:0.000296s ]
+SQL: SELECT * FROM `ahgfrx_project_member` WHERE ( pid=1 AND uid=3 ) LIMIT 1   [ RunTime:0.000241s ]
+SQL: DELETE FROM `ahgfrx_project_member` WHERE ( pid=1 AND uid=3 ) [ RunTime:0.000201s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000889s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000958s ]
+
+[ 2014-10-04T01:17:15+08:00 ] 127.0.0.1 /index.php/Home/Project/1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000747s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001098s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_join` [ RunTime:0.010073s ]
+SQL: SELECT * FROM `ahgfrx_project_join` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.000376s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_member` [ RunTime:0.007634s ]
+SQL: INSERT INTO `ahgfrx_project_member` (`pid`,`uid`,`admin`) VALUES (1,3,0) [ RunTime:0.000335s ]
+SQL: UPDATE `ahgfrx_project_join` SET `allow`=1 WHERE `id` = 3 [ RunTime:0.000284s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001177s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001281s ]
+
+[ 2014-10-04T01:17:23+08:00 ] 127.0.0.1 /index.php/Home/Project/1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000788s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001180s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_member` [ RunTime:0.009777s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project` [ RunTime:0.012029s ]
+SQL: SELECT * FROM `ahgfrx_project` WHERE ( id=1 AND uid=1 ) LIMIT 1   [ RunTime:0.000360s ]
+SQL: SELECT * FROM `ahgfrx_project_member` WHERE ( pid=1 AND uid=3 ) LIMIT 1   [ RunTime:0.000306s ]
+SQL: UPDATE `ahgfrx_project_member` SET `admin`=1 WHERE `id` = 8 [ RunTime:0.000205s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000985s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001053s ]
+
+[ 2014-10-04T01:17:27+08:00 ] 127.0.0.1 /index.php/Home/Project/1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000756s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001103s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_member` [ RunTime:0.008856s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project` [ RunTime:0.011419s ]
+SQL: SELECT * FROM `ahgfrx_project` WHERE ( id=1 AND uid=1 ) LIMIT 1   [ RunTime:0.000354s ]
+SQL: SELECT * FROM `ahgfrx_project_member` WHERE ( pid=1 AND uid=3 ) LIMIT 1   [ RunTime:0.000274s ]
+SQL: UPDATE `ahgfrx_project_member` SET `admin`=0 WHERE `id` = 8 [ RunTime:0.000197s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000891s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000952s ]
+
+[ 2014-10-04T01:31:21+08:00 ] 127.0.0.1 /index.php/Home/User/locss.css
+ERR: 非法操作:locss.css
+
+[ 2014-10-04T01:31:48+08:00 ] 127.0.0.1 /index.php/Home/Project/6
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000619s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001215s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_join` [ RunTime:0.010264s ]
+SQL: SELECT * FROM `ahgfrx_project_join` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.000549s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_member` [ RunTime:0.008475s ]
+SQL: INSERT INTO `ahgfrx_project_member` (`pid`,`uid`,`admin`) VALUES (6,1,0) [ RunTime:0.000323s ]
+SQL: UPDATE `ahgfrx_project_join` SET `allow`=1 WHERE `id` = 2 [ RunTime:0.000325s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000655s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000732s ]
+
+[ 2014-10-04T01:31:55+08:00 ] 127.0.0.1 /index.php/Home/Project/6
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000705s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001083s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_member` [ RunTime:0.008790s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project` [ RunTime:0.010272s ]
+SQL: SELECT * FROM `ahgfrx_project` WHERE ( id=6 AND uid=3 ) LIMIT 1   [ RunTime:0.000372s ]
+SQL: SELECT * FROM `ahgfrx_project_member` WHERE ( pid=6 AND uid=1 ) LIMIT 1   [ RunTime:0.000296s ]
+SQL: UPDATE `ahgfrx_project_member` SET `admin`=1 WHERE `id` = 9 [ RunTime:0.000193s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000853s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000914s ]
+
+[ 2014-10-04T01:36:00+08:00 ] 127.0.0.1 /index.php/Home/Project/6
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000687s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001116s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_member` [ RunTime:0.009240s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project` [ RunTime:0.012371s ]
+SQL: SELECT * FROM `ahgfrx_project` WHERE ( id=6 AND uid=3 ) LIMIT 1   [ RunTime:0.000315s ]
+SQL: SELECT * FROM `ahgfrx_project_member` WHERE ( pid=6 AND uid=1 ) LIMIT 1   [ RunTime:0.000269s ]
+SQL: UPDATE `ahgfrx_project_member` SET `admin`=0 WHERE `id` = 9 [ RunTime:0.000172s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000681s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000744s ]
+
+[ 2014-10-04T01:36:16+08:00 ] 127.0.0.1 /index.php/Home/Project/6
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000719s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001106s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_member` [ RunTime:0.010222s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project` [ RunTime:0.011076s ]
+SQL: SELECT * FROM `ahgfrx_project` WHERE ( id=6 AND uid=1 ) LIMIT 1   [ RunTime:0.000300s ]
+SQL: SELECT * FROM `ahgfrx_project_member` WHERE ( pid=6 AND uid=1 ) LIMIT 1   [ RunTime:0.000574s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001142s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001274s ]
+
+[ 2014-10-04T01:36:29+08:00 ] 127.0.0.1 /index.php/Home/Project/6
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000935s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_member` [ RunTime:0.011609s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project` [ RunTime:0.011347s ]
+SQL: SELECT * FROM `ahgfrx_project` WHERE ( id=6 AND uid=3 ) LIMIT 1   [ RunTime:0.000371s ]
+SQL: SELECT * FROM `ahgfrx_project_member` WHERE ( pid=6 AND uid=1 ) LIMIT 1   [ RunTime:0.000358s ]
+SQL: UPDATE `ahgfrx_project_member` SET `admin`=1 WHERE `id` = 9 [ RunTime:0.000241s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000707s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000766s ]
+
+[ 2014-10-04T01:36:55+08:00 ] 127.0.0.1 /index.php/Home/Project/6
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000470s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000816s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_member` [ RunTime:0.009150s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project` [ RunTime:0.010660s ]
+SQL: SELECT * FROM `ahgfrx_project` WHERE ( id=6 AND uid=3 ) LIMIT 1   [ RunTime:0.000324s ]
+SQL: SELECT * FROM `ahgfrx_project_member` WHERE ( pid=6 AND uid=1 ) LIMIT 1   [ RunTime:0.000266s ]
+SQL: UPDATE `ahgfrx_project_member` SET `admin`=0 WHERE `id` = 9 [ RunTime:0.000182s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000572s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000631s ]
+
+[ 2014-10-04T01:40:43+08:00 ] 127.0.0.1 /index.php/Home/Project/6
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000854s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_member` [ RunTime:0.010854s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project` [ RunTime:0.012519s ]
+SQL: SELECT * FROM `ahgfrx_project` WHERE ( id=6 AND uid=3 ) LIMIT 1   [ RunTime:0.000390s ]
+SQL: SELECT * FROM `ahgfrx_project_member` WHERE ( pid=6 AND uid=1 ) LIMIT 1   [ RunTime:0.000343s ]
+SQL: UPDATE `ahgfrx_project_member` SET `admin`=1 WHERE `id` = 9 [ RunTime:0.000235s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000663s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000730s ]
+
+[ 2014-10-04T01:40:52+08:00 ] 127.0.0.1 /index.php/Home/Project/6
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000497s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000807s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_member` [ RunTime:0.008470s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project` [ RunTime:0.012118s ]
+SQL: SELECT * FROM `ahgfrx_project` WHERE ( id=6 AND uid=3 ) LIMIT 1   [ RunTime:0.000308s ]
+SQL: SELECT * FROM `ahgfrx_project_member` WHERE ( pid=6 AND uid=1 ) LIMIT 1   [ RunTime:0.000258s ]
+SQL: UPDATE `ahgfrx_project_member` SET `admin`=0 WHERE `id` = 9 [ RunTime:0.000167s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000657s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000715s ]
+
+[ 2014-10-04T10:00:25+08:00 ] 127.0.0.1 /index.php/Home/User/locss.css
+ERR: 非法操作:locss.css
+
+[ 2014-10-04T10:43:25+08:00 ] 127.0.0.1 /index.php/Home/User/locss.css
+ERR: 非法操作:locss.css
+
+[ 2014-10-04T10:43:48+08:00 ] 127.0.0.1 /Home/Project/6
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000516s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000861s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project_member` [ RunTime:0.008408s ]
+SQL: SHOW COLUMNS FROM `ahgfrx_project` [ RunTime:0.010765s ]
+SQL: SELECT * FROM `ahgfrx_project` WHERE ( id=6 AND uid=3 ) LIMIT 1   [ RunTime:0.000309s ]
+SQL: SELECT * FROM `ahgfrx_project_member` WHERE ( pid=6 AND uid=1 ) LIMIT 1   [ RunTime:0.000232s ]
+SQL: UPDATE `ahgfrx_project_member` SET `admin`=1 WHERE `id` = 9 [ RunTime:0.031613s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000674s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000746s ]
+
+[ 2014-10-04T10:46:21+08:00 ] 127.0.0.1 /index.php/Home/Project.html/all
+ERR: 无法加载控制器:Project.html
+
+[ 2014-10-04T11:02:22+08:00 ] 127.0.0.1 /index.php/Home/Projcet.html/all.html
+ERR: 无法加载控制器:Projcet.html
+
+[ 2014-10-04T11:02:31+08:00 ] 127.0.0.1 /index.php/Home/Projcet.html/all
+ERR: 无法加载控制器:Projcet.html
+
+[ 2014-10-04T11:02:41+08:00 ] 127.0.0.1 /index.php/Home/Projcet.html
+ERR: 无法加载控制器:Projcet
+
+[ 2014-10-04T11:03:02+08:00 ] 127.0.0.1 /index.php/Home/Projcet.html
+ERR: 无法加载控制器:Projcet
+
+[ 2014-10-04T11:03:04+08:00 ] 127.0.0.1 /index.php/Home/Projcet.html/all
+ERR: 无法加载控制器:Projcet.html
+
+[ 2014-10-04T11:03:05+08:00 ] 127.0.0.1 /index.php/Home/Projcet.html/all.html
+ERR: 无法加载控制器:Projcet.html
+
+[ 2014-10-04T11:05:21+08:00 ] 127.0.0.1 /index.php/Home/User/locss.css
+ERR: 非法操作:locss.css
+
+[ 2014-10-04T14:12:42+08:00 ] 127.0.0.1 /index.php/Home/User/locss.css
+ERR: 非法操作:locss.css
+
+[ 2014-10-04T14:12:47+08:00 ] 127.0.0.1 /index.php/Home/User/locss.css
+ERR: 非法操作:locss.css
+
+[ 2014-10-04T14:12:57+08:00 ] 127.0.0.1 /index.php/Home/User/locss.css
+ERR: 非法操作:locss.css
+
+[ 2014-10-04T14:40:21+08:00 ] 127.0.0.1 /index.php/Home/User/locss.css
+ERR: 非法操作:locss.css
+
+[ 2014-10-04T14:41:03+08:00 ] 127.0.0.1 /Home/User/locss.css
+ERR: 非法操作:locss.css
+
+[ 2014-10-04T14:41:13+08:00 ] 127.0.0.1 /Home/User/locss.css
+ERR: 非法操作:locss.css
+
+[ 2014-10-04T14:52:24+08:00 ] 127.0.0.1 /Home/User/locss.css
+ERR: 非法操作:locss.css
+
+[ 2014-10-04T15:03:46+08:00 ] 127.0.0.1 /Home/User/locss.css
+ERR: 非法操作:locss.css
+
+[ 2014-10-04T15:10:26+08:00 ] 127.0.0.1 /index.php/Home/User/locss.css
+ERR: 非法操作:locss.css
+
+[ 2014-10-04T15:10:40+08:00 ] 127.0.0.1 /Home/User/locss.css
+ERR: 非法操作:locss.css
+
+[ 2014-10-04T15:10:52+08:00 ] 127.0.0.1 /Home/User/locss.css
+ERR: 非法操作:locss.css
+
+[ 2014-10-04T20:06:47+08:00 ] 127.0.0.1 /Home/User/locss.css
+ERR: 非法操作:locss.css
+
+[ 2014-10-04T23:11:21+08:00 ] 127.0.0.1 /index.php/Home/Respage/0
+ERR: 无法加载控制器:Respage
+
+[ 2014-10-04T23:11:51+08:00 ] 127.0.0.1 /Home/Respage/0
+ERR: 无法加载控制器:Respage
+
+[ 2014-10-04T23:12:29+08:00 ] 127.0.0.1 /Home/Respage/
+ERR: 无法加载控制器:Respage
+
+[ 2014-10-04T23:12:51+08:00 ] 127.0.0.1 /Home/Res/Respage/0
+ERR: 参数错误或者未定义:rid
+
+[ 2014-10-04T23:13:04+08:00 ] 127.0.0.1 /Home/Res/Respage/1
+ERR: 参数错误或者未定义:rid
+
+[ 2014-10-04T23:13:20+08:00 ] 127.0.0.1 /Home/Res/Page/1
+ERR: 非法操作:Page
+
+[ 2014-10-04T23:14:13+08:00 ] 127.0.0.1 /Home/Res/Page/1
+ERR: 非法操作:Page
+
+[ 2014-10-04T23:14:22+08:00 ] 127.0.0.1 /Home/Res/Respage/1
+ERR: 参数错误或者未定义:rid
+
+[ 2014-10-04T23:14:52+08:00 ] 127.0.0.1 /Home/Res/Respage/1
+ERR: 参数错误或者未定义:rid
+
+[ 2014-10-04T23:14:52+08:00 ] 127.0.0.1 /Home/Res/Respage/1
+ERR: 参数错误或者未定义:rid
+
+[ 2014-10-04T23:15:25+08:00 ] 127.0.0.1 /Home/Respage/1
+ERR: 模板不存在:./Application/Home/View/Res/respage.html
+

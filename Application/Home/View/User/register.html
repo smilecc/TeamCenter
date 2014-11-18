@@ -1,0 +1,106 @@
+<extend name="Base/common"/>
+
+<block name="header">
+<title>注册 - 五次元</title>
+<style type="text/css">
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+  font-family:Microsoft YaHei;
+}
+h2 {font-family:Microsoft YaHei;}
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}</style>
+</block>
+
+<block name="body">
+<body>
+<div class="container">
+<div class="page-header">
+  <h1 style="font-family:Microsoft YaHei">五次元 <small>注册 register</small></h1>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+        <form class="form-signin" role="form" action="__SELF__" method="post" id="reform">
+		<?php/*
+		if(@$_GET['msg']){
+		echo '<div class="alert alert-danger"><span class="glyphicon glyphicon-remove-sign"></span> ';
+		if($_GET['msg'] == "email"){
+		echo '邮箱格式错误';
+		}
+		else if($_GET['msg'] == "behaveemail"){
+		echo 'Email地址已存在';
+		}
+		else if($_GET['msg'] == "sql"){
+		echo '数据库错误';
+		}
+		else if($_GET['msg'] == "behavename"){
+		echo '昵称已存在';
+		}
+		echo '</div>';
+		}*/
+
+		//错误输出
+		?>
+
+        <input type="text" id="email" name="email" class="form-control" placeholder="Email地址" required>
+        <input type="text" id="name" name="username" class="form-control" placeholder="昵称（1-8个字符）" required>
+        <input type="password" id="password" name="password" class="form-control" placeholder="密码（6-16个字符）" required>
+		<input type="password" id="pwag" name="pwag" class="form-control" placeholder="重复密码" required>
+
+		<div class="row">
+		<div class="col-md-5"><input name="verify" type="text" class="form-control" placeholder="验证码" id="verify" maxlength="3" /></div>
+		<div class="col-md-3"><img src="{:U("verify");}" title="看不清，点击换一张" align="absmiddle" onClick="this.src=this.src+'?'+Math.random()"></div>
+		</div>
+
+          <br />
+        <button class="btn btn-lg btn-primary btn-block" id="sub" type="submit">注册</button>
+      </form>
+
+</div>
+<!--右侧-->
+<div class="col-md-6">
+<br />
+>已有账号？点击<a href="{:U("Home/User/login");}">登录</a><br /><br />
+>点击<a href="/">返回主页</a>
+</div>
+<!--/右侧-->
+</div>
+</div>
+</body>
+</block>

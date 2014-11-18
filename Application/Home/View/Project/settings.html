@@ -1,0 +1,248 @@
+<extend name="Base/common"/>
+<block name="body">
+<title>{$project['name']} - 项目协作 - 社团中心</title>
+<div class="container">
+<div class="row">
+<div class="page-header">
+  <h1>{$project['name']} <small>项目相关</small>
+  <if condition="$admin OR $is_member">
+  <span style="float:right"><a href="{:U('/Home/Team/'.$project['id'])}"><button class="btn btn-success">进入协作</button></a></span>
+  </if>
+  </h1>
+</div>
+	<div class="col-md-3">
+
+<ul class="nav nav-pills nav-stacked" role="tablist">
+  <li class="active"><a href="#project_setting" role="tab" data-toggle="tab">项目资料</a></li>
+  <li><a href="#project_member" role="tab" data-toggle="tab">成员相关</a></li>
+</ul>
+
+	</div><!--/col-md-3-->
+
+	<div class="col-md-9">
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane fade in active" id="project_setting">
+		<form method="post" action="__SELF__">
+      	<input type="hidden" name="type" value="create">
+      	<label class="col-sm-3 control-label">项目名称：</label>
+        {$project['name']}
+        <hr>
+        <label class="col-sm-3 control-label">创始人：</label>
+        {:getUsername($project['uid'])}
+        <hr>
+        <label class="col-sm-3 control-label">项目介绍：</label>
+        <IF condition="$admin">
+        <textarea id="content" class="form-control" style="width:500px;" rows="3" name="content" placeholder="请填写一些关于本项目的介绍（可选）">{$project['content']}</textarea>
+        <else />{$project['content']?nl2br($project['content']):'无'}
+        </IF>
+        <hr>
+        <div>
+        <label class="col-sm-3 control-label">公开性：</label>
+
+        <IF condition="$admin">
+        <label>
+    	<input type="radio" name="allow_join" id="optionsRadios1" value="1" <if condition="$project['allow_join']">checked</if>>
+    	所有人可见
+  		</label>
+  		<label>
+    	<input type="radio" name="allow_join" id="optionsRadios2" value="0"  <if condition="!$project['allow_join']">checked</if>>
+    	只限组员可见
+  		</label>
+  		<else /><if condition="$project['allow_join']">所有人可见<else />只限组员可见</if>
+  		</IF>
+  		</div>
+  		<hr>
+  		<label class="col-sm-3 control-label">项目语言：</label>
+  		<IF condition="$admin">
+  		<input class="form-control" style="width:300px;" type="text" name="lang" class="form-control" value="{$project['lang']}" placeholder="项目语言" required>
+  		<h5>多种语言请以英文逗号隔开：","</h5>
+  		<else />
+  		<volist name="project['lang_arr']" id="vo">
+  		<code>{$vo}</code>
+  		</volist>
+
+  		</IF>
+  		<hr>
+
+  		<if condition="$admin">
+  		<input type="hidden" name="type" value="update">
+    	<center>
+    		<button type="submit" class="btn btn-primary" style="width:130px;">提交</button>
+    		<button type="button" class="btn btn-danger" style="width:130px;" data-toggle="modal" data-target="#exit_project">退出本项目</button>
+    	</center>
+    	<elseif condition="!$admin AND $is_member" />
+
+    	<center>
+    		<button type="button" class="btn btn-danger" style="width:130px;" data-toggle="modal" data-target="#exit_project">退出本项目</button>
+    	</center>
+    	<else />
+    	<center><button type="button" class="btn btn-success" style="width:130px;" data-toggle="modal" data-target="#join">申请加入</button></center>
+    	<!-- Modal -->
+<div class="modal fade" id="join" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">取消</span></button>
+        <h4 class="modal-title" id="myModalLabel">申请加入项目</h4>
+      </div>
+      <div class="modal-body">
+      <form method="post" action="__SELF__">
+      	<input type="hidden" name="type" value="join">
+      	<b>申请信息：</b>
+        <textarea id="content" class="form-control" rows="3" name="content" placeholder="写一些对这个项目的看法吧"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="submit" class="btn btn-primary">提交</button>
+      </div>
+     </form>
+    </div>
+  </div>
+</div>
+
+    	</if>
+    	</form>
+  </div><!--/项目设置页结尾-->
+  <div class="tab-pane fade" id="project_member">
+  	<div class="panel panel-primary">
+  		<div class="panel-heading">
+    		<h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> 会员管理</h3>
+  		</div>
+  		<div class="panel-body">
+
+  			<!-- Nav tabs -->
+<ul class="nav nav-pills" role="tablist">
+  <li class="active"><a href="#project_member_setting" role="tab" data-toggle="tab">会员管理</a></li>
+  <if condition="$admin"><li><a href="#project_admin_setting" role="tab" data-toggle="tab">申请审批</a></li></if>
+</ul>
+<hr>
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane fade in active" id="project_member_setting">
+<div class="alert alert-success" role="alert"><P>友情提示：请善用浏览器搜索功能（快捷键：Ctrl+F）</P></div>
+<script type="text/javascript">
+function set_member(pid,uid,type_mod){
+  	$.ajax({
+    	type:"POST",
+   		url:"__SELF__",
+   		data:{
+   				type:type_mod,
+    			pid:pid,
+    			uid:uid,
+    		},
+    success:function(re){
+    	alert(re);
+    }
+    });
+}
+</script>
+<table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>用户名</th>
+          <th>身份</th>
+          <th>加入时间</th>
+          <if condition="$admin"><th>操作</th></if>
+        </tr>
+      </thead>
+      <tbody>
+      <volist name="member_list" id="vo" empty="$empty_member">
+        <tr>
+          <td>{$i}</td>
+          <td>{:getUsername($vo['uid'])}</td>
+          <td><if condition="$vo['admin']">管理员<else />会员</if></td>
+          <td>{$vo['time']}</td>
+          <td>
+          		<if condition="$creater">
+          			<if condition="!$vo['admin']">
+          			<button class="btn btn-primary" onclick="set_member({$vo['pid']},{$vo['uid']},'setadmin')">设为管理员</button>
+          			<else />
+          			<button class="btn btn-warning" onclick="set_member({$vo['pid']},{$vo['uid']},'setadmin')">取消管理员</button>
+          			</if>
+          		</if>
+          		<if condition="$vo['admin'] AND $creater">
+          			<button class="btn btn-danger" onclick="set_member({$vo['pid']},{$vo['uid']},'delete_member')">移除</button><!--非创建者不能移除管理员-->
+          		<elseif condition="!$vo['admin'] AND ($creater OR $admin)" />
+          			<button class="btn btn-danger" onclick="set_member({$vo['pid']},{$vo['uid']},'delete_member')">移除</button>
+          		</if>
+          		
+          </td>
+        </tr>
+       </volist>
+      </tbody>
+    </table>
+
+  </div><!--/project_member_setting-->
+  <div class="tab-pane fade" id="project_admin_setting" role="alert">
+
+<script type="text/javascript">
+function join_set(join_id,allow,divid){
+  	$.ajax({
+    	type:"POST",
+   		url:"__SELF__",
+   		data:{
+   				join_id:join_id,
+   				allow:allow,
+   				type:'set_join'
+    		},
+    success:function(re){
+    	if(re=='审批成功') $('#join_list_'+divid).alert('close');
+    }
+    });
+}
+</script>
+
+<volist name="join_list" id="vo" empty="$empty_join">
+<div class="panel panel-success" id="join_list_{$i}">
+  <div class="panel-heading">
+    <h3 class="panel-title">{:getUsername($vo['uid'])}</h3>
+  </div>
+  <div class="panel-body">
+    <p>{:nl2br($vo['content'])}</p>
+    <p class="text-right">
+    	<button class="btn btn-success" onclick="join_set({$vo['id']},1,{$i})">通过</button>
+    	<button class="btn btn-danger" onclick="join_set({$vo['id']},2,{$i})">拒绝</button>
+    </p>
+  </div>
+</div>
+</volist>
+  </div><!--/project_admin_setting-->
+</div>
+  		</div><!--panel-body-->
+  	</div>
+   </div><!--/project_member-->
+</div>
+
+	</div><!--/col-md-8-->
+</div><!--/row-->
+</div><!--/container-->
+
+
+
+    	<!-- 退出 -->
+<div class="modal fade" id="exit_project" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">取消</span></button>
+        <h4 class="modal-title" id="myModalLabel">确认退出项目</h4>
+      </div>
+      <div class="modal-body">
+      <form method="post" action="__SELF__">
+      	<input type="hidden" name="type" value="exit">
+      	<b>是否要退出本项目？</b>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="submit" class="btn btn-danger">确认</button>
+      </div>
+     </form>
+    </div>
+  </div>
+</div>
+	<!-- 退出 -->
+
+</block>
