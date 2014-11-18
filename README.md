@@ -9,13 +9,13 @@
 ##DEMO地址
 项目在SAE上:http://ahgrfx.sinaapp.com
 ##DEMO账号
-用户名：sxcuican@163.com
-密码：123456
+*用户名：sxcuican@163.com
+*密码：123456
 #开发说明
 ##架构
 使用PHP开发，数据库为MySQL，分别使用了如下框架：
-前端框架：Bootstrap
-后端框架：ThinkPHP
+*前端框架：Bootstrap
+*后端框架：ThinkPHP
 ##项目托管
 除了本GIT外，起初开发的时候是使用SVN做版本管理的
 所以在此给出SVN地址：http://code.taobao.org/p/ahgfrx/src/trunk/
