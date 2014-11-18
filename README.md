@@ -11,3 +11,16 @@
 ##DEMO账号
 用户名：sxcuican@163.com
 密码：123456
+#开发说明
+##架构
+使用PHP开发，数据库为MySQL，分别使用了如下框架：
+前端框架：Bootstrap
+后端框架：ThinkPHP
+##项目托管
+除了本GIT外，起初开发的时候是使用SVN做版本管理的
+所以在此给出SVN地址：http://code.taobao.org/p/ahgfrx/src/trunk/
+##SQL说明
+数据库结构保存为了SQL.sql在项目的根目录
+直接导入到MySQL即可，由于本人太懒，没有写install，所以创始人账号得由您自己手动创建。
+#最后
+不出意外不会再更新了，有任何问题可以联系我 Email:c@cuican.name
