@@ -9,7 +9,7 @@
 
 #DEMO
 ##DEMO地址
-项目在SAE上:http://ahgrfx.sinaapp.com
+项目在SAE上:http://ahgfrx.sinaapp.com
 ##DEMO账号
 * 用户名：sxcuican@163.com
 * 密码：123456
