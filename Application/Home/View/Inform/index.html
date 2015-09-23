@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="body">
-<title>公告 - 社团中心</title>
+<title>公告 - {:C('SITE_TITLE')}</title>
 <div class="container"><!--container-->
 <div class="row"><!--row-->
 
@@ -48,7 +48,7 @@
 function inform_submit(class_id,project_id){
   $.ajax({
             type:"POST",
-            url:"__SELF__",
+            url:"{:'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']}",
             data:{
                   content:$("#content").val(),
                   class_id:class_id,

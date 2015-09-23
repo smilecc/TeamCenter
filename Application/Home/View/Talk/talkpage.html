@@ -29,7 +29,7 @@
 </ul>
 </if>
 
-<form method="post" action="__SELF__">
+<form method="post" action="{:'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']}">
 <input type="hidden" name="type" value="create">
 <div class="col-md-10"><textarea id="content" class="form-control" rows="3" name="content" placeholder="评论些什么吧" required></textarea>
 </div>

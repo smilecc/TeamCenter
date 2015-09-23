@@ -1,6 +1,6 @@
 <extend name="Base/common"/>
 <block name="body">
-<title>资源共享 - 社团中心</title>
+<title>资源共享 - {:C('SITE_TITLE')}</title>
 <div class="container">
 <div class="row">
 	<div class="col-md-9">
@@ -45,7 +45,7 @@
         <h4 class="modal-title" id="myModalLabel">分享新资源</h4>
       </div>
       <div class="modal-body">
-      <form method="post" action="__SELF__">
+      <form method="post" action="{:'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']}">
       	<input type="hidden" name="type" value="create">
         <input class="form-control" style="width:300px;" type="text" name="res_name" class="form-control" placeholder="资源名称" required>
         <br />

@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="header">
-<title>注册 - 社团管理</title>
+<title>注册 - {:C('SITE_TITLE')}</title>
 <style type="text/css">
 body {
   padding-top: 40px;
@@ -56,7 +56,7 @@ h2 {font-family:Microsoft YaHei;}
 <div class="container">
 <div class="row">
 <div class="col-md-6">
-        <form class="form-signin" role="form" action="__SELF__" method="post" id="reform">
+        <form class="form-signin" role="form" action="{:'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']}" method="post" id="reform">
 		<?php/*
 		if(@$_GET['msg']){
 		echo '<div class="alert alert-danger"><span class="glyphicon glyphicon-remove-sign"></span> ';

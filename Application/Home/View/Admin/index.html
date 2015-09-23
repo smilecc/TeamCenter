@@ -1,0 +1,51 @@
+<extend name="Base/common"/>
+  <block name="body">
+  <php>
+    if(!isAdmin()) exit('Error');
+  </php>
+<title>管理 - {:C('SITE_TITLE')}</title>
+<script type="text/javascript">
+function node_set(id,allow){
+    $.ajax({
+      type:"POST",
+      url:"{:U('/Home/Admin/register_node')}",
+      data:{
+          nid:id,
+          allow:allow
+        },
+    success:function(re){
+      if(re=='1') $('#node_'+id).remove();
+    }
+    });
+}
+</script>
+<div class="container">
+<div class="row">
+<div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">节点审核</div>
+      <div class="panel-body">
+
+        <volist name="talkclass" id="vo">
+        <div class="col-md-4" id="node_{$vo['id']}">
+        <div class="panel panel-default">
+          <div class="panel-body">
+          <div class="panel-body">
+            <p><strong>节点名：</strong>{:$vo['name']}<br/>
+            <strong>父节点：</strong>{:getTalkclassname($vo['father'])}<br/>
+            <strong>申请人：</strong>{:getUsername($vo['uid'])}</p>
+            <div class="text-right">
+              <button class="btn btn-success" onclick="node_set({$vo['id']},1)">通过</button>
+              <button class="btn btn-danger" onclick="node_set({$vo['id']},0)">拒绝</button>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+        </volist>
+      </div>
+    </div>
+</div>
+</div>
+</div>
+</block>

@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="body">
-<title>{$project['name']} - 项目协作</title>
+<title>{$project['name']} - {:C('SITE_TITLE')}</title>
 <div class="container">
 <div class="col-md-3" id="space_height">
 <div class="alert alert-success" role="alert"><h4>提示</h4><p>善用任务分配能提高团队效能。</p></div>
@@ -30,7 +30,7 @@
         <h4 class="modal-title" id="myModalLabel">创建一个新讨论</h4>
       </div>
       <div class="modal-body">
-      <form method="post" action="__SELF__">
+      <form method="post" action="{:'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']}">
       	<input type="hidden" name="type" value="create_talk">
         <input class="form-control" style="width:300px;" type="text" name="talk_title" class="form-control" placeholder="讨论主题" required>
         <br />
@@ -73,7 +73,7 @@
         <h4 class="modal-title" id="myModalLabel">创建新的任务清单</h4>
       </div>
       <div class="modal-body">
-      <form method="post" action="__SELF__">
+      <form method="post" action="{:'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']}">
       	<input type="hidden" name="type" value="create_duty">
         <input class="form-control" style="width:300px;" type="text" name="duty_name" class="form-control" placeholder="清单名称" required>
         <br />
@@ -107,7 +107,7 @@
 function set_active(details_id,active){
   $.ajax({
             type:"POST",
-            url:"__SELF__",
+            url:"{:'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']}",
             data:{
                 	details_id:details_id,
                 	active:active,
@@ -166,7 +166,7 @@ function set_active(details_id,active){
 function duty_submit(){
   $.ajax({
             type:"POST",
-            url:"__SELF__",
+            url:"{:'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']}",
             data:{
           			duty_name:$("#duty_details_name").val(),
                 	duty_content:$("#duty_details_content").val(),

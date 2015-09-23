@@ -1,6 +1,6 @@
 <extend name="Base/common"/>
 <block name="body">
-<title>{$project['name']} - 项目协作 - 社团中心</title>
+<title>{$project['name']} - 项目协作 - {:C('SITE_TITLE')}</title>
 <div class="container">
 <div class="row">
 <div class="page-header">
@@ -24,7 +24,7 @@
 <!-- Tab panes -->
 <div class="tab-content">
   <div class="tab-pane fade in active" id="project_setting">
-		<form method="post" action="__SELF__">
+		<form method="post" action="{:'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']}">
       	<input type="hidden" name="type" value="create">
       	<label class="col-sm-3 control-label">项目名称：</label>
         {$project['name']}
@@ -88,7 +88,7 @@
         <h4 class="modal-title" id="myModalLabel">申请加入项目</h4>
       </div>
       <div class="modal-body">
-      <form method="post" action="__SELF__">
+      <form method="post" action="{:'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']}">
       	<input type="hidden" name="type" value="join">
       	<b>申请信息：</b>
         <textarea id="content" class="form-control" rows="3" name="content" placeholder="写一些对这个项目的看法吧"></textarea>
@@ -126,7 +126,7 @@
 function set_member(pid,uid,type_mod){
   	$.ajax({
     	type:"POST",
-   		url:"__SELF__",
+   		url:"{:'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']}",
    		data:{
    				type:type_mod,
     			pid:pid,
@@ -182,7 +182,7 @@ function set_member(pid,uid,type_mod){
 function join_set(join_id,allow,divid){
   	$.ajax({
     	type:"POST",
-   		url:"__SELF__",
+   		url:"{:'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']}",
    		data:{
    				join_id:join_id,
    				allow:allow,
@@ -231,7 +231,7 @@ function join_set(join_id,allow,divid){
         <h4 class="modal-title" id="myModalLabel">确认退出项目</h4>
       </div>
       <div class="modal-body">
-      <form method="post" action="__SELF__">
+      <form method="post" action="{:'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']}">
       	<input type="hidden" name="type" value="exit">
       	<b>是否要退出本项目？</b>
       </div>

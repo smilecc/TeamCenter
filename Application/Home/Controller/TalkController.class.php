@@ -10,9 +10,16 @@ class TalkController extends Controller {
 				}else{
 					$this->error('发布失败');
 				}
+			}else if(I('post.type')=='register_node'){
+				if(D('TalkClass')->add_new(I('post.node_name'),I('post.father'))){
+					$this->success('提交成功 等待审核');
+				}else{
+					$this->error('提交失败');
+				}
 			}
 		}else{
 			$talk_class = M('TalkClass')->order('id')->select();
+			$talk_class_display = M('TalkClass')->where('display=1')->order('id')->select();
 			//trace($mode,'提示');
 
 			if($mode==0){
@@ -22,10 +29,14 @@ class TalkController extends Controller {
 			}
 
 			$talk_page_numb = I('get.numb');
-			$this->assign('talk_page_numb',$talk_page_numb);
 
+			$classinfo = M('TalkClass')->where('id=%d',$mode)->find();
+
+			$this->assign('classinfo',$classinfo);
+			$this->assign('talk_page_numb',$talk_page_numb);
 			$this->assign('talk_mode',$mode);
 			$this->assign('talk_class',$talk_class);
+			$this->assign('talk_class_display',$talk_class_display);
 			$this->assign('talk_content',$talk_content);
 			$this->display();
 		}
@@ -41,7 +52,7 @@ class TalkController extends Controller {
 				}
 			}
 		}else{
-		$talk_class = M('TalkClass')->order('id')->select();
+		$talk_class = M('TalkClass')->where('display=1')->order('id')->select();
 		$talk_pagecon = M('Talk')->where('id=%d',$tid)->find();
 		$talk_count = M('TalkComment')->where('tid=%d',$tid)->count();
 		$talk_comment = M('TalkComment')->where('tid=%d',$tid)->order('id')->limit(I('get.numb'),I('get.numb')+30)->select();

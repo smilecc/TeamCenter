@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="body">
-<title>设置中心 - 五次元</title>
+<title>设置中心 - {:C('SITE_TITLE')}</title>
 <style type="text/css">
 .affix {
     width: 263px;
@@ -172,7 +172,7 @@
   <p>这里可以修改你的相关资料。</p>
 </blockquote>
 
-<form class="form-horizontal" action="__SELF__" method="post" role="form">
+<form class="form-horizontal" action="{:'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']}" method="post" role="form">
 <input type="hidden" name="type" value="1"><!--修改的类型-->
   <div class="form-group">
     <label class="col-sm-2 control-label">邮箱</label>
@@ -245,7 +245,7 @@
   <blockquote>
   <p>这里可以修改你的密码及密保问题等。</p>
 </blockquote>
-<form class="form-horizontal" action="__SELF__" method="post" role="form">
+<form class="form-horizontal" action="{:'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']}" method="post" role="form">
 <input type="hidden" name="type" value="2"><!--修改的类型-->
   <div class="form-group">
     <label class="col-sm-2 control-label">邮箱</label>

@@ -10,6 +10,16 @@ function is_login(){
 	if(session('user_auth_sign')!=NULL) return true;
 	else return false;
 }
+
+function isAdmin(){
+	return M('User')->where('uid=%d',session('user_auth_sign'))->getField('admin');
+}
+
+function getTalkclassCount($id){
+	if($id==0) return M('Talk')->count();
+	return M('Talk')->where('class=%d',$id)->count();
+}
+
 /*
 返回头像地址
 1=小头像
@@ -50,6 +60,8 @@ function getTalktitle($talk_id){
 
 //获取讨论类名
 function getTalkclassname($class_id){
+	if($class_id==-1) return '无';
+	if($class_id==0) return '全部节点';
 	$res_class = M('TalkClass');
 	return $res_class->where('id=%d',$class_id)->getField('name');
 }

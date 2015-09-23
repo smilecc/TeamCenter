@@ -1,12 +1,12 @@
 <extend name="Base/common"/>
 <block name="body">
-<title>收件箱 - 社团中心</title>
+<title>收件箱 - {:C('SITE_TITLE')}</title>
 
 <script type="text/javascript">
 function postmsg(){
     $.ajax({
             type:"POST",
-            url:"__SELF__",
+            url:"{:'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']}",
             data:{
                   type:'send',
                   toname:$("#toname").val(),

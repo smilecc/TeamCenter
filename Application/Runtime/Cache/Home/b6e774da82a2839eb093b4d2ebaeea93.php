@@ -5,6 +5,7 @@
 
     <!-- Bootstrap -->
     <link href="/Public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Public/css/bootstrap-select.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -14,9 +15,10 @@
     <![endif]-->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/Public/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/Public/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/Public/js/bootstrap-select.js"></script>
 <style type="text/css">
 button,p,h1,h2,h3,h4,h5,h6,a,td,small {
 font-family:Microsoft YaHei;
@@ -41,7 +43,7 @@ body {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/" style="font-family:Microsoft YaHei">社团中心</a>
+          <a class="navbar-brand" href="/" style="font-family:Microsoft YaHei"><?php echo C('SITE_TITLE');?></a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -98,7 +100,7 @@ body {
 	
 	<!-- 主体 -->
 	
-<title><?php echo ($project['name']); ?> - 项目协作 - 社团中心</title>
+<title><?php echo ($project['name']); ?> - 项目协作 - <?php echo C('SITE_TITLE');?></title>
 <div class="container">
 <div class="row">
 <div class="page-header">
@@ -120,7 +122,7 @@ body {
 <!-- Tab panes -->
 <div class="tab-content">
   <div class="tab-pane fade in active" id="project_setting">
-		<form method="post" action="/Home/Project/1">
+		<form method="post" action="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];?>">
       	<input type="hidden" name="type" value="create">
       	<label class="col-sm-3 control-label">项目名称：</label>
         <?php echo ($project['name']); ?>
@@ -174,7 +176,7 @@ body {
         <h4 class="modal-title" id="myModalLabel">申请加入项目</h4>
       </div>
       <div class="modal-body">
-      <form method="post" action="/Home/Project/1">
+      <form method="post" action="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];?>">
       	<input type="hidden" name="type" value="join">
       	<b>申请信息：</b>
         <textarea id="content" class="form-control" rows="3" name="content" placeholder="写一些对这个项目的看法吧"></textarea>
@@ -210,7 +212,7 @@ body {
 function set_member(pid,uid,type_mod){
   	$.ajax({
     	type:"POST",
-   		url:"/Home/Project/1",
+   		url:"<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];?>",
    		data:{
    				type:type_mod,
     			pid:pid,
@@ -258,7 +260,7 @@ function set_member(pid,uid,type_mod){
 function join_set(join_id,allow,divid){
   	$.ajax({
     	type:"POST",
-   		url:"/Home/Project/1",
+   		url:"<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];?>",
    		data:{
    				join_id:join_id,
    				allow:allow,
@@ -305,7 +307,7 @@ function join_set(join_id,allow,divid){
         <h4 class="modal-title" id="myModalLabel">确认退出项目</h4>
       </div>
       <div class="modal-body">
-      <form method="post" action="/Home/Project/1">
+      <form method="post" action="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];?>">
       	<input type="hidden" name="type" value="exit">
       	<b>是否要退出本项目？</b>
       </div>
@@ -326,7 +328,7 @@ function join_set(join_id,allow,divid){
 	<div class="container">
 <hr>
 <footer>
-&copy; Company 2014 All rights reserved - Design By <a href="http://cuican.name">崔璨</a> AND 刘伟
+&copy; Company 2014-2015 All rights reserved - Design By <a href="http://cuican.name">璨</a>
 <!--<div class="navbar-right">
 <a>联系我们</a> · 
 <a>帮助中心</a>

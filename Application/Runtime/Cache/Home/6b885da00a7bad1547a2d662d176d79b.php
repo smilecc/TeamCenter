@@ -5,6 +5,7 @@
 
     <!-- Bootstrap -->
     <link href="/Public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Public/css/bootstrap-select.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -14,9 +15,10 @@
     <![endif]-->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/Public/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/Public/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/Public/js/bootstrap-select.js"></script>
 <style type="text/css">
 button,p,h1,h2,h3,h4,h5,h6,a,td,small {
 font-family:Microsoft YaHei;
@@ -41,7 +43,7 @@ body {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/" style="font-family:Microsoft YaHei">社团中心</a>
+          <a class="navbar-brand" href="/" style="font-family:Microsoft YaHei"><?php echo C('SITE_TITLE');?></a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -57,6 +59,7 @@ body {
             <li><a href="<?php echo U('/Home/Projectlist');?>"><span class="glyphicon glyphicon-th-list"></span> 项目列表</a></li>
           </ul>
         </li>
+        <li id="about"><a href="<?php echo U('/Home/About');?>">关于</a></li>
           </ul>
 
 <?php if(is_login()): ?><ul class="nav navbar-nav navbar-right">
@@ -122,7 +125,7 @@ body {
   <li class="next <?php echo ($talk_page_numb+30>=$talk_count?'disabled':''); ?>"><a href="<?php echo U('/Home/Talkpage/'.$tid.'/'.($talk_page_numb+30));?>">下一页 &rarr;</a></li>
 </ul><?php endif; ?>
 
-<form method="post" action="/index.php/Home/Talkpage/4.html">
+<form method="post" action="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];?>">
 <input type="hidden" name="type" value="create">
 <div class="col-md-10"><textarea id="content" class="form-control" rows="3" name="content" placeholder="评论些什么吧" required></textarea>
 </div>
@@ -159,11 +162,11 @@ body {
 	<div class="container">
 <hr>
 <footer>
-&copy; Company 2014 All rights reserved - Design By <a href="http://weibo.com/smilexc8">璨</a>
-<div class="navbar-right">
+&copy; Company 2014-2015 All rights reserved - Design By <a href="http://cuican.name">璨</a>
+<!--<div class="navbar-right">
 <a>联系我们</a> · 
 <a>帮助中心</a>
-</div>
+</div>-->
 <br />
 </footer>
 </div>

@@ -41,7 +41,7 @@ body {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/" style="font-family:Microsoft YaHei">社团中心</a>
+          <a class="navbar-brand" href="/" style="font-family:Microsoft YaHei"><?php echo C('SITE_TITLE');?></a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -57,6 +57,7 @@ body {
             <li><a href="<?php echo U('/Home/Projectlist');?>"><span class="glyphicon glyphicon-th-list"></span> 项目列表</a></li>
           </ul>
         </li>
+        <li id="about"><a href="<?php echo U('/Home/About');?>">关于</a></li>
           </ul>
 
 <?php if(is_login()): ?><ul class="nav navbar-nav navbar-right">
@@ -97,7 +98,7 @@ body {
 	
 	<!-- 主体 -->
 	
-<title>设置中心 - 五次元</title>
+<title>设置中心 - <?php echo C('SITE_TITLE');?></title>
 <style type="text/css">
 .affix {
     width: 263px;
@@ -112,7 +113,7 @@ body {
         $(function() {
           $("#user-pic").uploadify({
             'swf' : '/Public/js/settings_uploadify.swf',
-            'uploader' : '/index.php/Home/User/settings.html',
+            'uploader' : '/index.php/home/user/settings.html',
             'width' : '200',
             'height' : '200',
             'buttonText' : '上传头像',
@@ -223,7 +224,7 @@ body {
                   var resdata;
                     $.ajax({
                       type:'POST',
-                        url: "/index.php/Home/User/settings.html/?action=jcrop",
+                        url: "/index.php/home/user/settings.html/?action=jcrop",
                         data: {'crop': CutJson},
                         success: function(result) {
                             window.location.reload();
@@ -268,7 +269,7 @@ body {
   <p>这里可以修改你的相关资料。</p>
 </blockquote>
 
-<form class="form-horizontal" action="/index.php/Home/User/settings.html" method="post" role="form">
+<form class="form-horizontal" action="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];?>" method="post" role="form">
 <input type="hidden" name="type" value="1"><!--修改的类型-->
   <div class="form-group">
     <label class="col-sm-2 control-label">邮箱</label>
@@ -339,7 +340,7 @@ body {
   <blockquote>
   <p>这里可以修改你的密码及密保问题等。</p>
 </blockquote>
-<form class="form-horizontal" action="/index.php/Home/User/settings.html" method="post" role="form">
+<form class="form-horizontal" action="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];?>" method="post" role="form">
 <input type="hidden" name="type" value="2"><!--修改的类型-->
   <div class="form-group">
     <label class="col-sm-2 control-label">邮箱</label>
@@ -398,11 +399,11 @@ body {
 	<div class="container">
 <hr>
 <footer>
-&copy; Company 2014 All rights reserved - Design By <a href="http://weibo.com/smilexc8">璨</a>
-<div class="navbar-right">
+&copy; Company 2014 All rights reserved - Design By <a href="http://cuican.name">璨</a>
+<!--<div class="navbar-right">
 <a>联系我们</a> · 
 <a>帮助中心</a>
-</div>
+</div>-->
 <br />
 </footer>
 </div>

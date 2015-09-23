@@ -5,6 +5,7 @@
 
     <!-- Bootstrap -->
     <link href="/Public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Public/css/bootstrap-select.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -14,9 +15,10 @@
     <![endif]-->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/Public/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/Public/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/Public/js/bootstrap-select.js"></script>
 <style type="text/css">
 button,p,h1,h2,h3,h4,h5,h6,a,td,small {
 font-family:Microsoft YaHei;
@@ -41,7 +43,7 @@ body {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/" style="font-family:Microsoft YaHei">社团中心</a>
+          <a class="navbar-brand" href="/" style="font-family:Microsoft YaHei"><?php echo C('SITE_TITLE');?></a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -98,7 +100,7 @@ body {
 	
 	<!-- 主体 -->
 	
-<title>关于 - 社团中心</title>
+<title>关于 - <?php echo C('SITE_TITLE');?></title>
     <div class="container bs-docs-container">
       <div class="row">
         <div class="col-md-3">
@@ -130,8 +132,8 @@ body {
   <div class="page-header">
     <h1 id="history">起源</h1>
   </div>
-  <p class="lead">本应用是由<a href="http://weibo.com/smilexc8">璨</a>在闲暇时间开发的，从无到有共写了十多天，总共28个版本。</p>
-  <p>最初<a href="http://weibo.com/smilexc8">璨</a>看到社团内用Q群来通知信息，觉得这种方法非常笨重，而且不易于组员交流、讨论，在于刘伟做功能上的商议以后，于是萌发了动手写这么一个平台的想法，前前后后做了十几天，终于大致做完。</p>
+  <p class="lead">本应用是由<a href="http://weibo.com/smilexc8">璨</a>在闲暇时间开发的，从无到有共花费了十多天。</p>
+  <p>最初<a href="http://weibo.com/smilexc8">璨</a>看到社团内用Q群来通知信息，觉得这种方法非常笨重，而且不易于组员交流、讨论，于是萌发了动手写这么一个平台的想法，前前后后做了十几天，终于大致做完。</p>
  
 </div>
 
@@ -142,7 +144,7 @@ body {
   <div class="page-header">
     <h1 id="team">核心开发小组</h1>
   </div>
-  <p class="lead">本站由核心开发小组维护。</p>
+  <p class="lead">本站由核心开发小组维护，也欢迎大家加入我们。</p>
   <div class="list-group bs-team">
     <table class="table table-hover">
         <thead>
@@ -155,11 +157,12 @@ body {
         <tbody>
             
             <tr><td>1</td><td>崔璨</td>
-                <td><a href="http://cuican.name">璨的博客</a></td>
+                <td><a target="_blank" href="http://cuican.name">璨的博客</a></td>
           </tr>
-          <tr><td>2</td><td>刘伟</td>
-                <td></td>
+          <tr><td>2</td><td>胡永浩</td>
+              <td><a target="_blank" href="http://weibo.com/u/3243542793">他的新浪微博</a></td>
           </tr>
+
             </tbody>
       </table>
   </div>
@@ -173,7 +176,7 @@ body {
   <div class="page-header">
     <h1 id="code">开发说明</h1>
   </div>
-  <p class="lead">使用PHP开发</p>
+  <p class="lead">本站使用PHP开发，使用了如下框架：</p>
     <p>前端框架：<a href="http://www.bootcss.com">Bootstrap</a></p>
     <p>后端框架：<a href="http://www.thinkphp.cn">ThinkPHP</a></p>
 </div>
@@ -186,7 +189,7 @@ body {
   <div class="page-header">
     <h1 id="open_code">开源说明</h1>
   </div>
-  <p class="lead">源码开源未定，敬请期待</p>
+    <p class="lead">源码在Github进行公开：<br />地址：<a href="https://github.com/smilecc/TeamCenter">https://github.com/smilecc/TeamCenter</a></p>
 </div>
 
         </div>
@@ -216,7 +219,7 @@ body {
 	<div class="container">
 <hr>
 <footer>
-&copy; Company 2014 All rights reserved - Design By <a href="http://cuican.name">崔璨</a> AND 刘伟
+&copy; Company 2014-2015 All rights reserved - Design By <a href="http://cuican.name">璨</a>
 <!--<div class="navbar-right">
 <a>联系我们</a> · 
 <a>帮助中心</a>

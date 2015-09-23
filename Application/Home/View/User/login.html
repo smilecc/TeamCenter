@@ -50,16 +50,16 @@ h2 {font-family:Microsoft YaHei;}
 
 <div class="container">
 <div class="page-header">
-  <h1 style="font-family:Microsoft YaHei">社团管理系统 <small>登录 login</small></h1>
+  <h1 style="font-family:Microsoft YaHei">{:C('SITE_TITLE')} <small>登录 login</small></h1>
 </div>
 </div>
 
 <div class="container">
 <div class="row">
 
-    <title>登录 - 社团管理系统</title>
+    <title>登录 - {:C('SITE_TITLE')}</title>
 
-        <form class="form-signin" role="form" action="__SELF__" method="post" id="reform">
+        <form class="form-signin" role="form" action="{:'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']}" method="post" id="reform">
         <input type="text" id="email" name="email" class="form-control" placeholder="Email地址" required autofocus>
         <input type="password" id="password" name="password" class="form-control" placeholder="密码" required>
 

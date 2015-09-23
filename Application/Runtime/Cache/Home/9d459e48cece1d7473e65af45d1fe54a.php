@@ -5,6 +5,7 @@
 
     <!-- Bootstrap -->
     <link href="/Public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Public/css/bootstrap-select.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -14,9 +15,10 @@
     <![endif]-->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/Public/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/Public/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/Public/js/bootstrap-select.js"></script>
 <style type="text/css">
 button,p,h1,h2,h3,h4,h5,h6,a,td,small {
 font-family:Microsoft YaHei;
@@ -41,7 +43,7 @@ body {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/" style="font-family:Microsoft YaHei">社团中心</a>
+          <a class="navbar-brand" href="/" style="font-family:Microsoft YaHei"><?php echo C('SITE_TITLE');?></a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -108,7 +110,7 @@ body {
   TEXT-DECORATION:none;
 }
 </style>
-<title>项目协作 - 社团中心</title>
+<title>项目协作 - <?php echo C('SITE_TITLE');?></title>
 <div class="container"><!--container-->
 <div class="row"><!--row-->
 	<div class="col-md-9">
@@ -160,7 +162,7 @@ body {
         <h4 class="modal-title" id="myModalLabel">创建项目</h4>
       </div>
       <div class="modal-body">
-      <form method="post" action="/index.php/Home/Project.html">
+      <form method="post" action="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];?>">
       	<input type="hidden" name="type" value="create">
         <input class="form-control" style="width:300px;" type="text" name="name" class="form-control" placeholder="项目名称" required>
         <br />
@@ -210,7 +212,7 @@ body {
 	<div class="container">
 <hr>
 <footer>
-&copy; Company 2014 All rights reserved - Design By <a href="http://cuican.name">崔璨</a> AND 刘伟
+&copy; Company 2014-2015 All rights reserved - Design By <a href="http://cuican.name">璨</a>
 <!--<div class="navbar-right">
 <a>联系我们</a> · 
 <a>帮助中心</a>

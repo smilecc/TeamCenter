@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 <block name="body">
 
-<title>讨论中心 - 社团中心</title>
+<title>讨论中心 - {:C('SITE_TITLE')}</title>
 <div class="container">
 <div class="row">
 	<div class="col-md-9">
@@ -19,15 +19,47 @@
   </div><!--col-md-9-->
 	<div class="col-md-3" id="space_height">
 
+<!--info-->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">节点信息</h3>
+  </div>
+  <div class="panel-body">
+    <strong>节点名：</strong>{:getTalkclassname($talk_mode)}<br/>
+    <strong>主题量：</strong>{:getTalkclassCount($talk_mode)}<br/>
+    <strong>父节点：</strong><a href="{:U('/Home/Talk.html/'.$classinfo['father'])}">{:getTalkclassname($classinfo['father'])}</a>
+    </div>
+  </div>
+
+<!--全部节点-->
+<div class="modal fade" id="allNodeDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">取消</span></button>
+        <h4 class="modal-title" id="myModalLabel">全部节点</h4>
+      </div>
+      <div class="modal-body">
+        <volist name="talk_class" id="vo">
+          <span><a type="button" href="{:U('Home/Talk/'.$vo['id'])}" class="btn btn-default btn-xs">{:$vo['name']}</a> </span>
+        </volist>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>` 
+      </div>
+     </form>
+    </div>
+  </div>
+</div>
 <!--资料列表-->
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">讨论类目</h3>
+    <h3 class="panel-title">讨论类目 <small><a href="javascript:;" data-toggle="modal" data-target="#allNodeDialog">查看所有</a></small></h3>
   </div>
   <div class="panel-body">
 <ul class="nav nav-pills nav-stacked" role="tablist">
   <li role="presentation" id="talk_0"><a href="{:U('/Home/Talk.html/0/')}">所有</a></li>
-  <volist name="talk_class" id="vo">
+  <volist name="talk_class_display" id="vo">
   <li role="presentation" id="talk_{$vo['id']}"><a href="{:U('/Home/Talk.html/'.$vo['id'])}">{$vo['name']}</a></li>
   </volist>
 </ul>
@@ -42,17 +74,23 @@
         <h4 class="modal-title" id="myModalLabel">创建一个新讨论</h4>
       </div>
       <div class="modal-body">
-      <form method="post" action="__SELF__">
+      <form method="post" action="{:'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']}">
       	<input type="hidden" name="type" value="create">
-        <input class="form-control" style="width:300px;" type="text" name="talk_title" class="form-control" placeholder="讨论主题" required>
+          <div class="input-group">
+            <div class="input-group-addon">讨论主题</div>
+            <input class="form-control" type="text" name="talk_title" class="form-control" placeholder="讨论主题" required>
+          </div>
         <br />
         <textarea id="content" class="form-control" rows="3" name="talk_content" placeholder="请填写关于这个讨论的内容" required></textarea>
         <br />
-  		<select multiple class="form-control" name="talk_class">
-      <volist name="talk_class" id="vo">
-        <option value="{$vo['id']}">{$vo['name']}</option>
-      </volist>
-      </select>
+          <div class="input-group">
+            <div class="input-group-addon">归属节点</div>
+          		<select class="form-control selectpicker" name="talk_class" data-live-search="true" required>
+              <volist name="talk_class" id="vo">
+                <option value="{$vo['id']}">{$vo['name']}</option>
+              </volist>
+              </select>
+          </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -64,6 +102,52 @@
 </div>
 
 <center><button class="btn btn-primary" data-toggle="modal" data-target="#create">开启新讨论</button></center>
+
+  </div>
+</div>
+<!--申请新节点-->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">申请新节点</h3>
+  </div>
+  <div class="panel-body">
+
+<!-- Modal -->
+<div class="modal fade" id="registerDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">取消</span></button>
+        <h4 class="modal-title" id="myModalLabel">申请一个新节点</h4>
+      </div>
+      <div class="modal-body">
+      <form method="post" action="{:'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']}">
+        <input type="hidden" name="type" value="register_node">
+          <div class="input-group">
+            <div class="input-group-addon">节点名称</div>
+            <input class="form-control" type="text" name="node_name" class="form-control" placeholder="节点名称" required>
+          </div>
+          <br/>
+          <div class="input-group">
+            <div class="input-group-addon">父节点（可不选）</div>
+              <select class="form-control show-tick selectpicker" name="father" data-live-search="true">
+              <option value="-1">无父节点</option>
+              <volist name="talk_class" id="vo">
+                <option value="{$vo['id']}">{$vo['name']}</option>
+              </volist>
+              </select>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="submit" class="btn btn-primary">提交</button>
+      </div>
+     </form>
+    </div>
+  </div>
+</div>
+
+<center><button class="btn btn-primary" data-toggle="modal" data-target="#registerDialog">填写申请</button></center>
 
   </div>
 </div>

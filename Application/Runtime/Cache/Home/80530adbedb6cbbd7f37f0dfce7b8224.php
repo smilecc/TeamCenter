@@ -5,6 +5,7 @@
 
     <!-- Bootstrap -->
     <link href="/Public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Public/css/bootstrap-select.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -14,9 +15,10 @@
     <![endif]-->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/Public/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/Public/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/Public/js/bootstrap-select.js"></script>
 <style type="text/css">
 button,p,h1,h2,h3,h4,h5,h6,a,td,small {
 font-family:Microsoft YaHei;
@@ -41,7 +43,7 @@ body {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/" style="font-family:Microsoft YaHei">社团中心</a>
+          <a class="navbar-brand" href="/" style="font-family:Microsoft YaHei"><?php echo C('SITE_TITLE');?></a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -57,6 +59,7 @@ body {
             <li><a href="<?php echo U('/Home/Projectlist');?>"><span class="glyphicon glyphicon-th-list"></span> 项目列表</a></li>
           </ul>
         </li>
+        <li id="about"><a href="<?php echo U('/Home/About');?>">关于</a></li>
           </ul>
 
 <?php if(is_login()): ?><ul class="nav navbar-nav navbar-right">
@@ -97,7 +100,7 @@ body {
 	
 	<!-- 主体 -->
 	
-<title><?php echo ($project['name']); ?> - 项目协作</title>
+<title><?php echo ($project['name']); ?> - <?php echo C('SITE_TITLE');?></title>
 <div class="container">
 <div class="col-md-3" id="space_height">
 <div class="alert alert-success" role="alert"><h4>提示</h4><p>善用任务分配能提高团队效能。</p></div>
@@ -126,7 +129,7 @@ body {
         <h4 class="modal-title" id="myModalLabel">创建一个新讨论</h4>
       </div>
       <div class="modal-body">
-      <form method="post" action="/index.php/Home/Team/3.html">
+      <form method="post" action="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];?>">
       	<input type="hidden" name="type" value="create_talk">
         <input class="form-control" style="width:300px;" type="text" name="talk_title" class="form-control" placeholder="讨论主题" required>
         <br />
@@ -165,7 +168,7 @@ body {
         <h4 class="modal-title" id="myModalLabel">创建新的任务清单</h4>
       </div>
       <div class="modal-body">
-      <form method="post" action="/index.php/Home/Team/3.html">
+      <form method="post" action="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];?>">
       	<input type="hidden" name="type" value="create_duty">
         <input class="form-control" style="width:300px;" type="text" name="duty_name" class="form-control" placeholder="清单名称" required>
         <br />
@@ -199,7 +202,7 @@ body {
 function set_active(details_id,active){
   $.ajax({
             type:"POST",
-            url:"/index.php/Home/Team/3.html",
+            url:"<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];?>",
             data:{
                 	details_id:details_id,
                 	active:active,
@@ -254,7 +257,7 @@ function set_active(details_id,active){
 function duty_submit(){
   $.ajax({
             type:"POST",
-            url:"/index.php/Home/Team/3.html",
+            url:"<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];?>",
             data:{
           			duty_name:$("#duty_details_name").val(),
                 	duty_content:$("#duty_details_content").val(),
@@ -366,11 +369,11 @@ function duty_submit(){
 	<div class="container">
 <hr>
 <footer>
-&copy; Company 2014 All rights reserved - Design By <a href="http://weibo.com/smilexc8">璨</a>
-<div class="navbar-right">
+&copy; Company 2014-2015 All rights reserved - Design By <a href="http://cuican.name">璨</a>
+<!--<div class="navbar-right">
 <a>联系我们</a> · 
 <a>帮助中心</a>
-</div>
+</div>-->
 <br />
 </footer>
 </div>

@@ -5,6 +5,7 @@
 
     <!-- Bootstrap -->
     <link href="/Public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Public/css/bootstrap-select.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -14,9 +15,10 @@
     <![endif]-->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/Public/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/Public/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/Public/js/bootstrap-select.js"></script>
 <style type="text/css">
 button,p,h1,h2,h3,h4,h5,h6,a,td,small {
 font-family:Microsoft YaHei;
@@ -41,7 +43,7 @@ body {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/" style="font-family:Microsoft YaHei">社团中心</a>
+          <a class="navbar-brand" href="/" style="font-family:Microsoft YaHei"><?php echo C('SITE_TITLE');?></a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -57,6 +59,7 @@ body {
             <li><a href="<?php echo U('/Home/Projectlist');?>"><span class="glyphicon glyphicon-th-list"></span> 项目列表</a></li>
           </ul>
         </li>
+        <li id="about"><a href="<?php echo U('/Home/About');?>">关于</a></li>
           </ul>
 
 <?php if(is_login()): ?><ul class="nav navbar-nav navbar-right">
@@ -98,7 +101,7 @@ body {
 	<!-- 主体 -->
 	
 
-<title>讨论中心 - 社团中心</title>
+<title>讨论中心 - <?php echo C('SITE_TITLE');?></title>
 <div class="container">
 <div class="row">
 	<div class="col-md-9">
@@ -114,15 +117,45 @@ body {
   </div><!--col-md-9-->
 	<div class="col-md-3" id="space_height">
 
+<!--info-->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">节点信息</h3>
+  </div>
+  <div class="panel-body">
+    <strong>节点名：</strong><?php echo getTalkclassname($talk_mode);?><br/>
+    <strong>主题量：</strong><?php echo getTalkclassCount($talk_mode);?><br/>
+    <strong>父节点：</strong><a href="<?php echo U('/Home/Talk.html/'.$classinfo['father']);?>"><?php echo getTalkclassname($classinfo['father']);?></a>
+    </div>
+  </div>
+
+<!--全部节点-->
+<div class="modal fade" id="allNodeDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">取消</span></button>
+        <h4 class="modal-title" id="myModalLabel">全部节点</h4>
+      </div>
+      <div class="modal-body">
+        <?php if(is_array($talk_class)): $i = 0; $__LIST__ = $talk_class;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><span><a type="button" href="<?php echo U('Home/Talk/'.$vo['id']);?>" class="btn btn-default btn-xs"><?php echo $vo['name'];?></a> </span><?php endforeach; endif; else: echo "" ;endif; ?>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>` 
+      </div>
+     </form>
+    </div>
+  </div>
+</div>
 <!--资料列表-->
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">讨论类目</h3>
+    <h3 class="panel-title">讨论类目 <small><a href="javascript:;" data-toggle="modal" data-target="#allNodeDialog">查看所有</a></small></h3>
   </div>
   <div class="panel-body">
 <ul class="nav nav-pills nav-stacked" role="tablist">
   <li role="presentation" id="talk_0"><a href="<?php echo U('/Home/Talk.html/0/');?>">所有</a></li>
-  <?php if(is_array($talk_class)): $i = 0; $__LIST__ = $talk_class;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li role="presentation" id="talk_<?php echo ($vo['id']); ?>"><a href="<?php echo U('/Home/Talk.html/'.$vo['id']);?>"><?php echo ($vo['name']); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+  <?php if(is_array($talk_class_display)): $i = 0; $__LIST__ = $talk_class_display;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li role="presentation" id="talk_<?php echo ($vo['id']); ?>"><a href="<?php echo U('/Home/Talk.html/'.$vo['id']);?>"><?php echo ($vo['name']); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
 </ul>
 <hr>
 
@@ -135,15 +168,21 @@ body {
         <h4 class="modal-title" id="myModalLabel">创建一个新讨论</h4>
       </div>
       <div class="modal-body">
-      <form method="post" action="/index.php/Home/Talk.html">
+      <form method="post" action="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];?>">
       	<input type="hidden" name="type" value="create">
-        <input class="form-control" style="width:300px;" type="text" name="talk_title" class="form-control" placeholder="讨论主题" required>
+          <div class="input-group">
+            <div class="input-group-addon">讨论主题</div>
+            <input class="form-control" type="text" name="talk_title" class="form-control" placeholder="讨论主题" required>
+          </div>
         <br />
         <textarea id="content" class="form-control" rows="3" name="talk_content" placeholder="请填写关于这个讨论的内容" required></textarea>
         <br />
-  		<select multiple class="form-control" name="talk_class">
-      <?php if(is_array($talk_class)): $i = 0; $__LIST__ = $talk_class;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo['id']); ?>"><?php echo ($vo['name']); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-      </select>
+          <div class="input-group">
+            <div class="input-group-addon">归属节点</div>
+          		<select class="form-control selectpicker" name="talk_class" data-live-search="true" required>
+              <?php if(is_array($talk_class)): $i = 0; $__LIST__ = $talk_class;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo['id']); ?>"><?php echo ($vo['name']); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+              </select>
+          </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -155,6 +194,50 @@ body {
 </div>
 
 <center><button class="btn btn-primary" data-toggle="modal" data-target="#create">开启新讨论</button></center>
+
+  </div>
+</div>
+<!--申请新节点-->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">申请新节点</h3>
+  </div>
+  <div class="panel-body">
+
+<!-- Modal -->
+<div class="modal fade" id="registerDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">取消</span></button>
+        <h4 class="modal-title" id="myModalLabel">申请一个新节点</h4>
+      </div>
+      <div class="modal-body">
+      <form method="post" action="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];?>">
+        <input type="hidden" name="type" value="register_node">
+          <div class="input-group">
+            <div class="input-group-addon">节点名称</div>
+            <input class="form-control" type="text" name="node_name" class="form-control" placeholder="节点名称" required>
+          </div>
+          <br/>
+          <div class="input-group">
+            <div class="input-group-addon">父节点（可不选）</div>
+              <select class="form-control show-tick selectpicker" name="father" data-live-search="true">
+              <option value="-1">无父节点</option>
+              <?php if(is_array($talk_class)): $i = 0; $__LIST__ = $talk_class;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo['id']); ?>"><?php echo ($vo['name']); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+              </select>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="submit" class="btn btn-primary">提交</button>
+      </div>
+     </form>
+    </div>
+  </div>
+</div>
+
+<center><button class="btn btn-primary" data-toggle="modal" data-target="#registerDialog">填写申请</button></center>
 
   </div>
 </div>
@@ -175,11 +258,11 @@ body {
 	<div class="container">
 <hr>
 <footer>
-&copy; Company 2014 All rights reserved - Design By <a href="http://weibo.com/smilexc8">璨</a>
-<div class="navbar-right">
+&copy; Company 2014-2015 All rights reserved - Design By <a href="http://cuican.name">璨</a>
+<!--<div class="navbar-right">
 <a>联系我们</a> · 
 <a>帮助中心</a>
-</div>
+</div>-->
 <br />
 </footer>
 </div>
