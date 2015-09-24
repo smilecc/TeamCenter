@@ -58,7 +58,7 @@ function inform_submit(class_id,project_id){
             success:function(re){
                 alert(re);
                 if(re=="发布成功"){
-                  location.replace(location);
+                  window.location.reload();
                 }
             }
   });

@@ -150,7 +150,7 @@ body {
 <!--资料列表-->
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">讨论类目 <small><a href="javascript:;" data-toggle="modal" data-target="#allNodeDialog">查看所有</a></small></h3>
+    <h3 class="panel-title">讨论节点 <small><a href="javascript:;" data-toggle="modal" data-target="#allNodeDialog">查看所有</a></small></h3>
   </div>
   <div class="panel-body">
 <ul class="nav nav-pills nav-stacked" role="tablist">

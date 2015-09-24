@@ -1,4 +1,6 @@
 <?php
+// markdown解析器
+include("Parsedown.php");
 
 // 检测输入的验证码是否正确，$code为用户输入的验证码字符串
 function check_verify($code, $id = ''){
@@ -88,4 +90,52 @@ function getInboxalert(){
 function getDutyname($duty_id){
 	return M('ProjectTeamDuty')->where('id=%d',$duty_id)->getField('name');
 }
+
+// 解析Markdown文本
+function ParseMd($text)
+{
+   return Parsedown::instance()
+    ->setBreaksEnabled(true)
+    ->setMarkupEscaped(true) # escapes markup (HTML)
+    ->text($text);
+}
+// 解析Markdown文本 - 行模式
+function ParseMdLine($text)
+{
+   return Parsedown::instance()
+    ->setBreaksEnabled(true)
+    ->setMarkupEscaped(true) # escapes markup (HTML)
+    ->line($text);
+}
+
+function GetUserPage($username){
+	$uid = M('User')->where("username='%s'",$username)->getField('uid');
+	if($uid == null) return false;
+	else return U('/Home/User/People/'.$uid);
+}
+
+// 解析内容中@用户的事件
+function ParseAtUser($value)
+{
+    return $temp_value = preg_replace_callback(
+            "/@([\S]+)\s{1}/",
+            function ($matches) {
+            	$page = GetUserPage($matches[1]);
+            	if($page){
+            		$content = "[".$matches[0]."](".GetUserPage($matches[1]).")";
+            		$tid = session('atpage');
+            		$tinfo = M('Talk')->where('id=%d',$tid)->find();
+            		$lastComment = M('TalkComment')->where('tid=%d',$tid)->order('id desc')->find();
+            		$atcontent = $content." 在 《[".$tinfo['title']."](".U('Home/Talkpage/'.$tid).'#reply'.$lastComment['id'].")》 中提到/回复了你。";
+            		D('Inbox')->send($matches[1],$atcontent,2);
+                	return $content;
+            	}else{
+            		return $matches[0];
+            	}
+
+            },
+            $value
+        );
+}
+
 ?>

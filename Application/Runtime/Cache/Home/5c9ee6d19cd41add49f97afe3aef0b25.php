@@ -15,7 +15,7 @@
     <![endif]-->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/Public/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/Public/bootstrap/js/bootstrap.min.js"></script>
     <script src="/Public/js/bootstrap-select.js"></script>
@@ -112,7 +112,7 @@ h2 {font-family:Microsoft YaHei;}
 	<div class="container">
 <hr>
 <footer>
-&copy; Company 2014 All rights reserved - Design By <a href="http://cuican.name">璨</a>
+&copy; Company 2014-2015 All rights reserved - Design By <a href="http://cuican.name">璨</a>
 <!--<div class="navbar-right">
 <a>联系我们</a> · 
 <a>帮助中心</a>

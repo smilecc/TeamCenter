@@ -68,7 +68,7 @@ function postmsg(){
   </if>
   
   </if>
-  ：{:getInboxcontent($vo['inbox_id'])}...</p>
+  ：{:ParseMdLine(getInboxcontent($vo['inbox_id']))}...</p>
   <p><span>{$vo['time']}</span><span style="float:right"><a href="/Home/Inboxpage/{$vo['uid1'] == cookie('user_id')?$vo['uid2']:$vo['uid1']}" target="_BLANK">共{$vo['numb']}条对话</a></span></p>
   <hr>
 </volist>

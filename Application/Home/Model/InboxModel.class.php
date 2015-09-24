@@ -3,9 +3,10 @@ namespace Home\Model;
 use Think\Model;
 
 class InboxModel extends Model{
-	public function send($toname,$content){
+	public function send($toname,$content,$fromuser=null){
 		if(!$toname or !$content) return false;
-		$uid1 = session('user_auth_sign');
+		if($fromuser==null) $uid1 = session('user_auth_sign');
+		else $uid1 = $fromuser;
 		$uid2 = M('User')->where("username='%s'",$toname)->getField('uid');
 		$touid = $uid2;
 		if(!$uid2) return false;

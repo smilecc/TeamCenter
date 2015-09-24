@@ -52,6 +52,7 @@ class TalkController extends Controller {
 				}
 			}
 		}else{
+		trace('user_auth_sign',session('user_auth_sign'));
 		$talk_class = M('TalkClass')->where('display=1')->order('id')->select();
 		$talk_pagecon = M('Talk')->where('id=%d',$tid)->find();
 		$talk_count = M('TalkComment')->where('tid=%d',$tid)->count();

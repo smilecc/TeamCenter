@@ -5,6 +5,7 @@
 
     <!-- Bootstrap -->
     <link href="/Public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Public/css/bootstrap-select.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -14,9 +15,10 @@
     <![endif]-->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/Public/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/Public/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/Public/js/bootstrap-select.js"></script>
 <style type="text/css">
 button,p,h1,h2,h3,h4,h5,h6,a,td,small {
 font-family:Microsoft YaHei;
@@ -113,7 +115,7 @@ body {
         $(function() {
           $("#user-pic").uploadify({
             'swf' : '/Public/js/settings_uploadify.swf',
-            'uploader' : '/index.php/home/user/settings.html',
+            'uploader' : '/index.php/Home/User/settings.html',
             'width' : '200',
             'height' : '200',
             'buttonText' : '上传头像',
@@ -224,7 +226,7 @@ body {
                   var resdata;
                     $.ajax({
                       type:'POST',
-                        url: "/index.php/home/user/settings.html/?action=jcrop",
+                        url: "/index.php/Home/User/settings.html/?action=jcrop",
                         data: {'crop': CutJson},
                         success: function(result) {
                             window.location.reload();
@@ -399,7 +401,7 @@ body {
 	<div class="container">
 <hr>
 <footer>
-&copy; Company 2014 All rights reserved - Design By <a href="http://cuican.name">璨</a>
+&copy; Company 2014-2015 All rights reserved - Design By <a href="http://cuican.name">璨</a>
 <!--<div class="navbar-right">
 <a>联系我们</a> · 
 <a>帮助中心</a>

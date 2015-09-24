@@ -100,57 +100,77 @@ body {
 	
 	<!-- 主体 -->
 	
-<style type="text/css">
-.form-create {
-  max-width: 330px;
-  padding: 15px;
-  margin: 0 auto;
-}
-.form-project a:hover{
-  TEXT-DECORATION:none;
-}
-</style>
-<title>项目列表 - <?php echo C('SITE_TITLE');?></title>
-<div class="container"><!--container-->
-<div class="row"><!--row-->
-<div class="col-md-9">
-  <?php if(is_array($plist)): $i = 0; $__LIST__ = $plist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><h4><a href="<?php echo U('/Home/Project/'.$vo['id']);?>" target="_BLANK"><?php echo ($vo['name']); ?></a><span style="float:right"><span class="glyphicon glyphicon-user"></span> <?php echo getUsername($vo['uid']);?></span></h4>
-   <small><?php echo mb_substr($vo['content'],0,100,"utf8");?>...<span style="float:right"><span class="glyphicon glyphicon-pencil"></span> <?php echo ($vo['lang']); ?></span></small>
-   <hr><?php endforeach; endif; else: echo "" ;endif; ?>
-<?php if(($plist_count > ($plist_numb+30)) OR ($plist_count > 30)): ?><ul class="pager">
-  <li class="previous <?php echo ($plist_numb-30<0?'disabled':''); ?>"><a href="<?php echo U('/Home/Projectlist/'.($plist_numb-30));?>">&larr; 上一页</a></li>
-  <li class="next"><a href="<?php echo U('/Home/Projectlist/'.($plist_numb+30));?>">下一页 &rarr;</a></li>
-</ul><?php endif; ?>
-
-</div><!--col-md-9-->
-
-<div class="col-md-3" id="space_height">
-  
-<script type="text/javascript">
-function plist_search(class_name){
-  location.replace('/Home/Projectsearch/'+class_name+'/'+$("#plish_search_input").val());
-}
-</script>
-
-<div class="input-group">
-          <input type="text" class="form-control" id="plish_search_input">
-          <div class="input-group-btn">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">搜索 <span class="caret"></span></button>
-            <ul class="dropdown-menu dropdown-menu-right" role="menu">
-              <li><a href="#" onclick="plist_search('name')">在项目名称中搜索</a></li>
-              <li><a href="#" onclick="plist_search('lang')">在所属语言中搜索</a></li>
-            </ul>
-          </div><!-- /btn-group -->
-        </div>
-
-</div><!--col-md-3-->
-
-</div><!--/container-->
-</div><!--/row-->
+<title>收件箱 - <?php echo C('SITE_TITLE');?></title>
 
 <script type="text/javascript">
-  document.getElementById("project").className="active";
+function postmsg(){
+    $.ajax({
+            type:"POST",
+            url:"<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];?>",
+            data:{
+                  type:'send',
+                  toname:$("#toname").val(),
+                  content:$("#comenttext").val()
+                  },
+            cache:false, //不缓存此页面   
+            success:function(re){
+        alert(re);
+        location.replace(location);
+            }
+        });
+
+
+  }
 </script>
+
+<div class="modal fade" id="wmsg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">发送私信</h4>
+      </div>
+      <div class="modal-body">
+      <input type="text" class="form-control" id="toname" placeholder="请输入要私信的用户名 只能输一个哦( • ̀ω•́ )✧..."><hr>
+<textarea name="content" onKeyDown='if (this.value.length>=500){if(event.keyCode != 8)event.returnValue=false;}' class="form-control" rows="5" id="comenttext"></textarea>
+<hr>
+<div class="alert alert-info">长度限500字</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" onclick="postmsg()" data-dismiss="modal">提交</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="container">
+
+<div class="col-md-8">
+<div class="page-header">
+  <h3>我的私信 <small><button class="btn btn-success" data-toggle="modal" data-target="#wmsg">写私信</button></small></h3>
+</div>
+<?php if(is_array($inbox_index)): $i = 0; $__LIST__ = $inbox_index;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><p><?php if(($vo['from'] == 1)): if(($vo['uid1'] == cookie('user_id'))): ?>我发送给<a href="/Home/User/people/<?php echo ($vo["uid2"]); ?>"><?php echo getUsername($vo['uid2']);?></a>
+  <?php else: ?>
+  <a href="/Home/User/people/<?php echo ($vo["uid1"]); ?>"><?php echo getUsername($vo['uid1']);?></a><?php endif; ?>
+
+  <?php else: ?>
+
+  <?php if(($vo['uid1'] == cookie('user_id'))): ?><a href="/Home/User/people/<?php echo ($vo["uid2"]); ?>"><?php echo getUsername($vo['uid2']);?></a>
+  <?php else: ?>
+  我发送给<a href="/Home/User/people/<?php echo ($vo["uid1"]); ?>"><?php echo getUsername($vo['uid1']);?></a><?php endif; endif; ?>
+  ：<?php echo ParseMdLine(getInboxcontent($vo['inbox_id']));?>...</p>
+  <p><span><?php echo ($vo['time']); ?></span><span style="float:right"><a href="/Home/Inboxpage/<?php echo ($vo['uid1'] == cookie('user_id')?$vo['uid2']:$vo['uid1']); ?>" target="_BLANK">共<?php echo ($vo['numb']); ?>条对话</a></span></p>
+  <hr><?php endforeach; endif; else: echo "" ;endif; ?>
+
+
+</div><!--col-md-8-->
+
+<div class="col-md-4" id="space_height">
+
+</div>
+
+</div><!--container-->
 
 
 	<!-- /主体 -->

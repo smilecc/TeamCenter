@@ -102,6 +102,12 @@ body {
 	
 
 <title><?php echo ($talk_pagecon['title']); ?> - 讨论中心</title>
+<script type="text/javascript">
+  function reply(username){
+    $('#content').val($('#content').val() + '@' + username + ' ');
+    $('#content').focus();
+  }
+</script>
 <div class="container">
 
 <div class="page-header">
@@ -111,13 +117,13 @@ body {
 
 <div class="row">
 	<div class="col-md-9">
-<p><?php echo nl2br($talk_pagecon['content']);?></p>
+<p><?php echo ParseMd($talk_pagecon['content']);?></p>
 <small><p class="text-right"><b>主题内容</b> <?php echo ($talk_pagecon['time']); ?></p></small>
 <hr>
 
-<?php if(is_array($talk_comment)): $i = 0; $__LIST__ = $talk_comment;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><b><?php echo getUsername($vo['uid']);?>：</b>
-<p><?php echo nl2br($vo['content']);?></p>
-<small><p class="text-right"><b>#<?php echo ($i+$talk_page_numb); ?></b> <?php echo ($vo['time']); ?></p></small>
+<?php if(is_array($talk_comment)): $i = 0; $__LIST__ = $talk_comment;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><b id="reply<?php echo ($vo['id']); ?>"><?php echo getUsername($vo['uid']);?>：</b>
+<p><?php echo ParseMd($vo['content']);?></p>
+<small><p class="text-right"><a href="javascript:;" onclick="reply('<?php echo getUsername($vo['uid']);?>')">回复</a> <b>#<?php echo ($i+$talk_page_numb); ?></b> <?php echo ($vo['time']); ?></p></small>
 <hr><?php endforeach; endif; else: echo "" ;endif; ?>
 
 <?php if(($talk_count > ($talk_page_numb+30)) OR ($talk_count > 30)): ?><ul class="pager">
@@ -127,7 +133,7 @@ body {
 
 <form method="post" action="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'];?>">
 <input type="hidden" name="type" value="create">
-<div class="col-md-10"><textarea id="content" class="form-control" rows="3" name="content" placeholder="评论些什么吧" required></textarea>
+<div class="col-md-10"><textarea id="content" class="form-control" rows="4" name="content" placeholder="评论些什么吧" required></textarea>
 </div>
 <div><button type="submit" class="btn btn-success">提交</button></div>
 </form>

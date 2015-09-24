@@ -100,119 +100,64 @@ body {
 	
 	<!-- 主体 -->
 	
-<title>关于 - <?php echo C('SITE_TITLE');?></title>
-    <div class="container bs-docs-container">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="bs-sidebar hidden-print" role="complementary">
-            <ul class="nav bs-sidenav">
-                                  
-                <li>
-	<a href="#history">起源</a>
-	</li>
-	<li>
-		<a href="#team">开发小组</a>
-	</li>
-  <li>
-    <a href="#code">开发说明</a>
-  </li>
-	<li>
-		<a href="#open_code">开源说明</a>
-	</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-9" role="main">
-          
 
+<title>与 <?php echo getUsername($uid);?> 的对话 - 私信</title>
 
-<!-- History
-================================================== -->
-<div class="bs-docs-section">
-  <div class="page-header">
-    <h1 id="history">起源</h1>
-  </div>
-  <p class="lead">本应用是由<a href="http://weibo.com/smilexc8">璨</a>在闲暇时间开发的，从无到有共花费了十多天。</p>
-  <p>最初<a href="http://weibo.com/smilexc8">璨</a>看到社团内用Q群来通知信息，觉得这种方法非常笨重，而且不易于组员交流、讨论，于是萌发了动手写这么一个平台的想法，前前后后做了十几天，终于大致做完。</p>
- 
-</div>
+<div class="container">
 
-
-<!-- Team
-================================================== -->
-<div class="bs-docs-section">
-  <div class="page-header">
-    <h1 id="team">核心开发小组</h1>
-  </div>
-  <p class="lead">本站由核心开发小组维护，也欢迎大家加入我们。</p>
-  <div class="list-group bs-team">
-    <table class="table table-hover">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>称呼</th>
-            <th>主页</th>
-          </tr>
-        </thead>
-        <tbody>
-            
-            <tr><td>1</td><td>崔璨</td>
-                <td><a target="_blank" href="http://cuican.name">璨的博客</a></td>
-          </tr>
-          <tr><td>2</td><td>胡永浩</td>
-              <td><a target="_blank" href="http://weibo.com/u/3243542793">他的新浪微博</a></td>
-          </tr>
-
-            </tbody>
-      </table>
-  </div>
-  
-</div>
-
-
-<!-- code
-================================================== -->
-<div class="bs-docs-section">
-  <div class="page-header">
-    <h1 id="code">开发说明</h1>
-  </div>
-  <p class="lead">本站使用PHP开发，使用了如下框架：</p>
-    <p>前端框架：<a href="http://www.bootcss.com">Bootstrap</a></p>
-    <p>后端框架：<a href="http://www.thinkphp.cn">ThinkPHP</a></p>
-</div>
-
-
-
-<!-- open_code
-================================================== -->
-<div class="bs-docs-section">
-  <div class="page-header">
-    <h1 id="open_code">开源说明</h1>
-  </div>
-    <p class="lead">源码在Github进行公开：<br />地址：<a href="https://github.com/smilecc/TeamCenter">https://github.com/smilecc/TeamCenter</a></p>
-</div>
-
-        </div>
-      </div>
-
-    </div>
-
-
-
-      
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-
-        
-        <div class="container">
-     <!-- /container -->
-
-      </div>
+<div class="col-md-8">
+<div style="width:550px">
+<p>发送私信给 <b><?php echo getUsername($uid);?>：</b></p>
 
 <script type="text/javascript">
-  document.getElementById("about").className="active";
+function send(){
+    $.ajax({
+            type:"POST",
+            url:"<?php echo U('/Home/Inbox');?>",
+            data:{
+                  type:'send',
+                  toname:'<?php echo getUsername($uid);?>',
+                  content:$("#contenttext").val()
+                  },
+            cache:false, //不缓存此页面   
+            success:function(re){
+        alert(re);
+        if(re=="发送成功") location.replace(location);
+            }
+        });
+
+
+  }
 </script>
 
-  
+<textarea name="content" id="contenttext" onKeyDown='if (this.value.length>=500){if(event.keyCode != 8)event.returnValue=false;}' class="form-control" rows="4" id="comenttext"></textarea><br />
+<div class="text-right"><button type="submit" class="btn btn-primary" onclick="send()">发送</button></div>
+
+</div>
+<hr>
+<?php if(is_array($inboxpage_con)): $i = 0; $__LIST__ = $inboxpage_con;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><p><?php if(($vo['from'] == 1)): if(($vo['uid1'] == cookie('user_id'))): ?><b>我</b>
+  <?php else: ?>
+  <a href="/Home/User/people/<?php echo ($vo["uid1"]); ?>"><?php echo getUsername($vo['uid1']);?></a><?php endif; ?>
+
+  <?php else: ?>
+
+  <?php if(($vo['uid1'] == cookie('user_id'))): ?><a href="/Home/User/people/<?php echo ($vo["uid2"]); ?>"><?php echo getUsername($vo['uid2']);?></a>
+  <?php else: ?>
+  <b>我</b><?php endif; endif; ?>
+  ：<?php echo ParseMdLine($vo['content']);?></p>
+  <p><div class="text-right"><?php echo ($vo['time']); ?></div></p>
+  <hr><?php endforeach; endif; else: echo "" ;endif; ?>
+
+
+</div><!--col-md-8-->
+
+<div class="col-md-4" id="space_height">
+
+</div>
+
+</div><!--container-->
+
+
 	<!-- /主体 -->
 
 	<!-- 底部 -->

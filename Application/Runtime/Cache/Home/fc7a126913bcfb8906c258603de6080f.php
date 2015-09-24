@@ -113,7 +113,7 @@ body {
 
 <div class="panel panel-default">
   <div class="panel-body">
-    <h4><p>个人介绍：<?php echo ($user_info['content']?$user_info['content']:'无'); ?></p></h4>
+    <p><span class="badge">个人介绍</span> <?php echo ($user_info['content']?$user_info['content']:'无'); ?></p>
   <p><?php echo $pagecon[0]['geqian']; ?></p>
   <hr>
   <p><span class="glyphicon glyphicon-user"></span>
@@ -167,7 +167,7 @@ body {
         <tr>
           <th>#</th>
           <th>标题</th>
-          <th>所属列别</th>
+          <th>所属节点</th>
           <th>开启时间</th>
         </tr>
       </thead>
